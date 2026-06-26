@@ -70,7 +70,15 @@ export default function Hero() {
               Ver benefícios
             </a>
           </div>
-          <p className="font-sans text-paper-muted text-xs mt-4">
+          <a
+            href="/calculadoras"
+            className="inline-flex items-center gap-2 mt-5 font-sans text-paper-dim text-sm hover:text-gold transition-colors duration-200 group"
+          >
+            <span className="font-mono text-gold/50 group-hover:text-gold transition-colors duration-200" aria-hidden="true">⊕</span>
+            Acessar ferramentas gratuitas do autor
+            <span className="font-mono text-gold/40 group-hover:text-gold transition-colors duration-200" aria-hidden="true">→</span>
+          </a>
+          <p className="font-sans text-paper-muted text-xs mt-3">
             Reunião gratuita · 7 dias grátis após assinar · Cancele quando quiser
           </p>
         </div>
