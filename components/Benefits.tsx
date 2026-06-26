@@ -41,11 +41,6 @@ const BENEFITS: Benefit[] = [
     body: 'Membros da Academy têm 15% de desconto na criação de um site com blog profissional para divulgar seus livros e construir presença digital como autor publicado.',
   },
   {
-    mark: '%',
-    title: '20% de desconto em consultorias',
-    body: 'Membros da Academy têm 20% de desconto em qualquer consultoria avulsa da LIBRIX ACADEMY — direto no preço, sem cupom.',
-  },
-  {
     mark: '∞',
     title: 'Cancelamento livre',
     body: 'Sem fidelidade, sem prazo mínimo, sem burocracia. Cancele quando quiser — sem multa e sem perguntas.',
