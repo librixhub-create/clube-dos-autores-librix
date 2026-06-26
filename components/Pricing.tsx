@@ -1,34 +1,36 @@
-const WA_EUR =
-  'https://wa.me/5532998491620?text=Olá!+Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB+—+plano+Europa+(€49%2Fmês)'
+import SignupForm from './SignupForm'
 
 interface PlanCardProps {
   region: string
   badge: string
   sym: string
   whole: string
-  cents?: string
   annualLine: string
   extra?: string
-  cta: string
-  waUrl: string
 }
 
-function PlanCard({
-  region,
-  badge,
-  sym,
-  whole,
-  cents,
-  annualLine,
-  extra,
-  cta,
-  waUrl,
-}: PlanCardProps) {
+function PlanCard({ region, badge, sym, whole, annualLine, extra }: PlanCardProps) {
   return (
     <div>
       <p className="font-mono text-paper-muted text-xs tracking-widest uppercase mb-3 text-center">
         {region}
       </p>
+
+      {/* Guarantee callout */}
+      <div className="border border-gold/25 bg-gold/5 rounded-sm px-4 py-3 mb-4 flex items-start gap-3">
+        <span className="font-mono text-gold flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+          ✦
+        </span>
+        <div>
+          <p className="font-sans text-paper text-sm font-semibold mb-0.5">
+            Garantia de 7 dias
+          </p>
+          <p className="font-sans text-paper-dim text-xs leading-relaxed">
+            Se não gostar por qualquer motivo nos primeiros 7 dias, devolvemos seu dinheiro. Sem perguntas.
+          </p>
+        </div>
+      </div>
+
       {/* Outer stamp border */}
       <div className="border-2 border-gold p-1.5">
         {/* Inner stamp border */}
@@ -46,7 +48,7 @@ function PlanCard({
           {/* Price */}
           <div
             className="flex items-start justify-center gap-1 mb-1"
-            aria-label={`${sym}${whole}${cents ?? ''} por mês`}
+            aria-label={`${sym}${whole} por mês após o período de teste`}
           >
             <span className="font-mono text-gold/70 text-sm mt-3" aria-hidden="true">
               {sym}
@@ -57,11 +59,6 @@ function PlanCard({
             >
               {whole}
             </span>
-            {cents && (
-              <span className="font-mono text-gold/90 text-2xl mt-3" aria-hidden="true">
-                {cents}
-              </span>
-            )}
           </div>
           <p className="font-mono text-paper-muted text-sm mb-6 tracking-wider">
             por mês
@@ -71,9 +68,9 @@ function PlanCard({
 
           <p className="font-sans text-paper-dim text-sm mb-4">{annualLine}</p>
 
-          {/* Extra exclusive benefit (Europa plan only) */}
+          {/* Extra exclusive benefit */}
           {extra && (
-            <div className="border border-gold/30 bg-gold/8 rounded-sm px-4 py-3 mb-5 text-left">
+            <div className="border border-gold/30 bg-gold/8 rounded-sm px-4 py-3 mb-6 text-left">
               <p className="font-mono text-gold/60 text-xs tracking-widest uppercase mb-1">
                 Exclusivo neste plano
               </p>
@@ -83,18 +80,7 @@ function PlanCard({
             </div>
           )}
 
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-gold text-ink font-sans font-bold text-base py-3 px-6 rounded text-center hover:bg-gold-light transition-colors duration-200"
-          >
-            {cta}
-          </a>
-
-          <p className="font-sans text-paper-muted text-xs mt-3">
-            Sem fidelidade · Cancele quando quiser
-          </p>
+          <SignupForm />
         </div>
       </div>
     </div>
@@ -120,7 +106,7 @@ export default function Pricing() {
             Simples assim
           </h2>
           <p className="font-sans text-paper-dim text-sm mt-3 max-w-sm mx-auto">
-            Tudo que você precisa para publicar bem na Amazon, por um valor fixo mensal.
+            Comece com uma reunião gratuita. Assine só se fizer sentido para você.
           </p>
         </header>
 
@@ -128,13 +114,11 @@ export default function Pricing() {
           <div className="w-full max-w-sm">
             <PlanCard
               region="Clube do Autor"
-              badge="Plano Mensal"
+              badge="Plano Mensal · 7 dias grátis"
               sym="€"
               whole="49"
               annualLine="Prefere anual? € 469/ano — 2+ meses grátis"
               extra="Pacotes prontos de planejamento para lançamento do seu livro"
-              cta="Quero assinar agora"
-              waUrl={WA_EUR}
             />
           </div>
         </div>
