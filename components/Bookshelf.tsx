@@ -9,7 +9,7 @@ const BOOKS: Book[] = [
   { label: 'Templates',     bg: '#8b6914', edge: '#6a5010', height: 128 },
   { label: 'Checklist KDP', bg: '#2d5a3d', edge: '#1e3d29', height: 106 },
   { label: 'Revisão',       bg: '#a8552f', edge: '#7d3d22', height: 148 },
-  { label: 'Comunidade',    bg: '#4a5568', edge: '#2d3748', height: 116 },
+  { label: 'Consultoria',   bg: '#4a5568', edge: '#2d3748', height: 116 },
   { label: 'Desconto',      bg: '#c9a24b', edge: '#a88538', height: 138 },
   { label: 'Liberdade',     bg: '#5a3e6b', edge: '#3d2852', height: 100 },
 ]
@@ -20,7 +20,7 @@ export default function Bookshelf() {
       <div
         className="flex items-end gap-2 sm:gap-3 overflow-x-auto"
         role="img"
-        aria-label="Estante com os seis benefícios do Clube do Autor: Templates, Checklist KDP, Revisão, Comunidade, Desconto e Liberdade"
+        aria-label="Estante com os seis benefícios do Clube do Autor: Templates, Checklist KDP, Revisão, Consultoria, Desconto e Liberdade"
       >
         {BOOKS.map((book) => (
           <div

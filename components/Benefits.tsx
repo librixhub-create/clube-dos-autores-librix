@@ -22,8 +22,8 @@ const BENEFITS: Benefit[] = [
   },
   {
     mark: '⬡',
-    title: 'Comunidade no WhatsApp',
-    body: 'Acesso ao grupo fechado de autores LIBRIX HUB: troca de experiências, dicas e apoio de quem também publica na Amazon.',
+    title: 'Consultoria personalizada via call',
+    body: 'Sessão individual por videochamada para tirar dúvidas, revisar sua estratégia ou planejar seu próximo lançamento.',
   },
   {
     mark: '%',

@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Clube do Autor | LIBRIX HUB',
   description:
-    'A assinatura mensal para autores independentes que publicam na Amazon KDP. Templates, checklists, revisões e comunidade por €49/mês.',
+    'A assinatura mensal para autores independentes que publicam na Amazon KDP. Templates, checklists, revisões e consultoria personalizada por €49/mês.',
   openGraph: {
     title: 'Clube do Autor | LIBRIX HUB',
     description:

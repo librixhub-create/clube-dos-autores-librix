@@ -25,7 +25,7 @@ export default function Hero() {
 
           <p className="font-sans text-base sm:text-lg text-paper-dim max-w-xl mb-10 leading-relaxed">
             O Clube do Autor LIBRIX HUB é a assinatura mensal que entrega
-            templates, checklists, revisões e comunidade para autores
+            templates, checklists, revisões e consultoria personalizada para autores
             independentes que publicam na Amazon KDP.
           </p>
 
