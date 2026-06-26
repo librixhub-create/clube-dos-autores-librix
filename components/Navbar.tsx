@@ -23,14 +23,22 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <a
-          href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-terra text-paper font-sans text-sm font-semibold px-4 py-2 rounded hover:bg-terra-light transition-colors duration-200"
-        >
-          Entrar no Clube
-        </a>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            href="/calculadoras"
+            className="font-sans text-paper-dim text-sm hover:text-gold transition-colors duration-200 hidden sm:block"
+          >
+            Calculadoras
+          </Link>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-terra text-paper font-sans text-sm font-semibold px-4 py-2 rounded hover:bg-terra-light transition-colors duration-200"
+          >
+            Entrar no Clube
+          </a>
+        </div>
       </nav>
     </header>
   )
