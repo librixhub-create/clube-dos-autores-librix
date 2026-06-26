@@ -130,10 +130,11 @@ export default function FileConverter() {
     for (let p = 1; p <= pdf.numPages; p++) {
       const page = await pdf.getPage(p)
       const content = await page.getTextContent()
-      const text = content.items
-        .filter((item): item is { str: string; hasEOL: boolean } => 'str' in item)
-        .map((item) => item.str + (item.hasEOL ? '\n' : ''))
-        .join('')
+      const textItems = content.items.filter((item) => 'str' in item) as unknown as Array<{
+        str: string
+        hasEOL: boolean
+      }>
+      const text = textItems.map((item) => item.str + (item.hasEOL ? '\n' : '')).join('')
       if (text.trim()) pageTexts.push(text)
     }
 
