@@ -20,7 +20,7 @@ export default function Footer() {
             Pronto para publicar com mais confiança?
           </h2>
           <p className="font-sans text-paper-dim text-base sm:text-lg mb-8 max-w-md mx-auto">
-            Entre para o Clube do Autor e tenha tudo que precisa por R$ 34,90/mês.
+            Entre para o Clube do Autor e tenha tudo que precisa por €49/mês.
           </p>
           <a
             href={WA_CTA}

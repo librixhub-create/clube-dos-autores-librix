@@ -4,8 +4,9 @@ import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import RoyaltyCalculator from '@/components/calculators/RoyaltyCalculator'
 import SpineCalculator from '@/components/calculators/SpineCalculator'
+import FileConverter from '@/components/calculators/FileConverter'
 
-type Tab = 'royalties' | 'lombada'
+type Tab = 'royalties' | 'lombada' | 'conversor'
 
 const TABS: { id: Tab; label: string; description: string }[] = [
   {
@@ -17,6 +18,11 @@ const TABS: { id: Tab; label: string; description: string }[] = [
     id: 'lombada',
     label: 'Lombada',
     description: 'Largura da lombada e dimensões da capa plana',
+  },
+  {
+    id: 'conversor',
+    label: 'Conversor',
+    description: 'Converta arquivos Word ↔ PDF direto no navegador',
   },
 ]
 
@@ -34,18 +40,18 @@ export default function CalculadorasPage() {
               Ferramentas gratuitas · LIBRIX HUB
             </p>
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-paper mb-3">
-              Calculadoras KDP
+              Ferramentas para Autores
             </h1>
             <p className="font-sans text-paper-dim text-base sm:text-lg max-w-lg">
-              Estime seus royalties e calcule as dimensões exatas de lombada e
-              capa para publicar na Amazon KDP.
+              Calcule royalties e lombada KDP, converta arquivos Word ↔ PDF — tudo
+              no navegador, sem enviar dados a servidores.
             </p>
           </header>
 
           {/* Tab bar */}
           <div
             role="tablist"
-            aria-label="Selecione a calculadora"
+            aria-label="Selecione a ferramenta"
             className="flex gap-0 border-b border-gold/20 mb-10"
           >
             {TABS.map((tab) => (
@@ -58,7 +64,7 @@ export default function CalculadorasPage() {
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
                 className={
-                  'px-5 py-3 border-b-2 -mb-px font-serif text-base font-semibold transition-colors duration-150 text-left ' +
+                  'px-4 sm:px-5 py-3 border-b-2 -mb-px font-serif text-sm sm:text-base font-semibold transition-colors duration-150 text-left ' +
                   (activeTab === tab.id
                     ? 'border-gold text-gold'
                     : 'border-transparent text-paper-dim hover:text-paper')
@@ -91,6 +97,15 @@ export default function CalculadorasPage() {
             hidden={activeTab !== 'lombada'}
           >
             <SpineCalculator />
+          </div>
+
+          <div
+            id="panel-conversor"
+            role="tabpanel"
+            aria-labelledby="tab-conversor"
+            hidden={activeTab !== 'conversor'}
+          >
+            <FileConverter />
           </div>
         </div>
       </main>
