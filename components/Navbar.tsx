@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import LanguagePicker from './LanguagePicker'
 
 const WA_URL =
   'https://wa.me/5532998491620?text=Quero+entrar+na+LIBRIX+ACADEMY'
@@ -38,13 +39,14 @@ export default function Navbar() {
           >
             Ferramentas
           </Link>
+          <LanguagePicker />
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-terra text-paper font-sans text-sm font-semibold px-4 py-2 rounded hover:bg-terra-light transition-colors duration-200"
           >
-            Entrar no Clube
+            Entrar na Academy
           </a>
         </div>
       </nav>

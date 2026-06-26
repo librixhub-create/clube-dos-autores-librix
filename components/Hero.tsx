@@ -29,6 +29,16 @@ export default function Hero() {
             independentes que publicam na Amazon KDP.
           </p>
 
+          {/* Geographic availability */}
+          <div className="inline-flex items-center gap-2 border border-gold/20 bg-gold/5 rounded-sm px-3 py-1.5 mb-5">
+            <span className="font-mono text-gold text-xs flex-shrink-0" aria-hidden="true">◉</span>
+            <p className="font-sans text-paper-dim text-xs leading-snug">
+              Exclusivo para{' '}
+              <span className="text-paper font-medium">Portugal, Espanha, Itália</span>
+              {' '}e outros países da Europa
+            </p>
+          </div>
+
           {/* Social proof */}
           <div className="flex items-center gap-3 mb-10" aria-label="Mais de 45 autores já no Clube">
             <div className="flex -space-x-1.5" aria-hidden="true">
