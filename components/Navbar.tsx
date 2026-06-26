@@ -24,11 +24,19 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-4 sm:gap-6">
+          <a
+            href="https://www.librixhub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-paper-dim text-sm hover:text-gold transition-colors duration-200 hidden sm:block"
+          >
+            librixhub.com
+          </a>
           <Link
             href="/calculadoras"
             className="font-sans text-paper-dim text-sm hover:text-gold transition-colors duration-200 hidden sm:block"
           >
-            Calculadoras
+            Ferramentas
           </Link>
           <a
             href={WA_URL}

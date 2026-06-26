@@ -38,19 +38,36 @@ export default function Footer() {
             LIBRIX HUB
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center">
+            <a
+              href="https://www.librixhub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-paper-dim text-sm hover:text-gold transition-colors duration-200"
+            >
+              librixhub.com
+            </a>
+            <span className="hidden sm:inline text-gold/20" aria-hidden="true">·</span>
+            <a
+              href="https://www.instagram.com/librixhub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-paper-dim text-sm hover:text-gold transition-colors duration-200"
+              aria-label="Instagram @librixhub"
+            >
+              @librixhub
+            </a>
+            <span className="hidden sm:inline text-gold/20" aria-hidden="true">·</span>
             <a
               href={WA_CONTACT}
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-paper-dim text-sm hover:text-gold transition-colors duration-200"
-              aria-label="Contato via WhatsApp: +55 32 99849-1620"
+              aria-label="WhatsApp +55 32 99849-1620"
             >
               +55 32 99849-1620
             </a>
-            <span className="hidden sm:inline text-gold/20" aria-hidden="true">
-              ·
-            </span>
+            <span className="hidden sm:inline text-gold/20" aria-hidden="true">·</span>
             <a
               href="mailto:librixhub@gmail.com"
               className="font-mono text-paper-dim text-sm hover:text-gold transition-colors duration-200"

@@ -5,8 +5,10 @@ import Navbar from '@/components/Navbar'
 import RoyaltyCalculator from '@/components/calculators/RoyaltyCalculator'
 import SpineCalculator from '@/components/calculators/SpineCalculator'
 import FileConverter from '@/components/calculators/FileConverter'
+import KeywordGenerator from '@/components/calculators/KeywordGenerator'
+import PriceCalculator from '@/components/calculators/PriceCalculator'
 
-type Tab = 'royalties' | 'lombada' | 'conversor'
+type Tab = 'royalties' | 'lombada' | 'conversor' | 'keywords' | 'preco'
 
 const TABS: { id: Tab; label: string; description: string }[] = [
   {
@@ -23,6 +25,16 @@ const TABS: { id: Tab; label: string; description: string }[] = [
     id: 'conversor',
     label: 'Conversor',
     description: 'Converta arquivos Word ↔ PDF direto no navegador',
+  },
+  {
+    id: 'keywords',
+    label: 'Keywords',
+    description: 'Gere palavras-chave KDP por gênero literário',
+  },
+  {
+    id: 'preco',
+    label: 'Preço',
+    description: 'Descubra o preço mínimo para atingir sua meta de renda',
   },
 ]
 
@@ -52,7 +64,7 @@ export default function CalculadorasPage() {
           <div
             role="tablist"
             aria-label="Selecione a ferramenta"
-            className="flex gap-0 border-b border-gold/20 mb-10"
+            className="flex gap-0 border-b border-gold/20 mb-10 overflow-x-auto"
           >
             {TABS.map((tab) => (
               <button
@@ -64,7 +76,7 @@ export default function CalculadorasPage() {
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
                 className={
-                  'px-4 sm:px-5 py-3 border-b-2 -mb-px font-serif text-sm sm:text-base font-semibold transition-colors duration-150 text-left ' +
+                  'px-3 sm:px-5 py-3 border-b-2 -mb-px font-serif text-xs sm:text-sm font-semibold transition-colors duration-150 whitespace-nowrap flex-shrink-0 ' +
                   (activeTab === tab.id
                     ? 'border-gold text-gold'
                     : 'border-transparent text-paper-dim hover:text-paper')
@@ -106,6 +118,24 @@ export default function CalculadorasPage() {
             hidden={activeTab !== 'conversor'}
           >
             <FileConverter />
+          </div>
+
+          <div
+            id="panel-keywords"
+            role="tabpanel"
+            aria-labelledby="tab-keywords"
+            hidden={activeTab !== 'keywords'}
+          >
+            <KeywordGenerator />
+          </div>
+
+          <div
+            id="panel-preco"
+            role="tabpanel"
+            aria-labelledby="tab-preco"
+            hidden={activeTab !== 'preco'}
+          >
+            <PriceCalculator />
           </div>
         </div>
       </main>
