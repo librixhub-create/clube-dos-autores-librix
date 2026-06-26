@@ -16,6 +16,16 @@ const BENEFITS: Benefit[] = [
     body: 'Checklist completo e atualizado para garantir que seu livro seja publicado sem erros — nunca mais esqueça um passo.',
   },
   {
+    mark: '☰',
+    title: 'Guia Completo de Publicação KDP',
+    body: 'Guia passo a passo com tudo que você precisa saber para publicar na Amazon KDP — formatação, preços, palavras-chave, categorias e estratégia de visibilidade.',
+  },
+  {
+    mark: '◆',
+    title: 'Kit de Funil para Lançamento',
+    body: 'Material completo para lançar com impacto: cronograma de pré-lançamento, escopo de campanha, estratégia de posicionamento e organização de cada etapa do planejamento.',
+  },
+  {
     mark: '◎',
     title: '1 revisão mensal',
     body: 'Todo mês, você envia sua capa ou descrição e recebe um feedback especializado para publicar com mais confiança.',
