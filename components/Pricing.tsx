@@ -1,7 +1,7 @@
 const WA_BRL =
   'https://wa.me/5532998491620?text=Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB'
 const WA_EUR =
-  'https://wa.me/5532998491620?text=Olá!+Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB+—+plano+Europa+(€29%2Fmês)'
+  'https://wa.me/5532998491620?text=Olá!+Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB+—+plano+Europa+(€49%2Fmês)'
 
 interface PlanCardProps {
   region: string
@@ -10,6 +10,7 @@ interface PlanCardProps {
   whole: string
   cents?: string
   annualLine: string
+  extra?: string
   cta: string
   waUrl: string
 }
@@ -21,6 +22,7 @@ function PlanCard({
   whole,
   cents,
   annualLine,
+  extra,
   cta,
   waUrl,
 }: PlanCardProps) {
@@ -48,10 +50,7 @@ function PlanCard({
             className="flex items-start justify-center gap-1 mb-1"
             aria-label={`${sym}${whole}${cents ?? ''} por mês`}
           >
-            <span
-              className="font-mono text-gold/70 text-sm mt-3"
-              aria-hidden="true"
-            >
+            <span className="font-mono text-gold/70 text-sm mt-3" aria-hidden="true">
               {sym}
             </span>
             <span
@@ -61,10 +60,7 @@ function PlanCard({
               {whole}
             </span>
             {cents && (
-              <span
-                className="font-mono text-gold/90 text-2xl mt-3"
-                aria-hidden="true"
-              >
+              <span className="font-mono text-gold/90 text-2xl mt-3" aria-hidden="true">
                 {cents}
               </span>
             )}
@@ -75,7 +71,19 @@ function PlanCard({
 
           <div className="border-t border-gold/20 my-4" />
 
-          <p className="font-sans text-paper-dim text-sm mb-6">{annualLine}</p>
+          <p className="font-sans text-paper-dim text-sm mb-4">{annualLine}</p>
+
+          {/* Extra exclusive benefit (Europa plan only) */}
+          {extra && (
+            <div className="border border-gold/30 bg-gold/8 rounded-sm px-4 py-3 mb-5 text-left">
+              <p className="font-mono text-gold/60 text-xs tracking-widest uppercase mb-1">
+                Exclusivo neste plano
+              </p>
+              <p className="font-sans text-paper text-sm font-medium leading-snug">
+                + {extra}
+              </p>
+            </div>
+          )}
 
           <a
             href={waUrl}
@@ -133,8 +141,9 @@ export default function Pricing() {
             region="Europa"
             badge="Plano Mensal"
             sym="€"
-            whole="29"
-            annualLine="Prefere anual? € 249/ano — 2+ meses grátis"
+            whole="49"
+            annualLine="Prefere anual? € 469/ano — 2+ meses grátis"
+            extra="Pacotes prontos de planejamento para lançamento do seu livro"
             cta="Quero assinar agora"
             waUrl={WA_EUR}
           />
