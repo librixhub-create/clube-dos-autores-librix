@@ -7,6 +7,9 @@
 /** [CONST] USD → BRL conversion rate. Update when needed. */
 export const USD_TO_BRL = 5.0
 
+/** [CONST] EUR → USD conversion rate. Update when needed. */
+export const EUR_TO_USD = 1.09
+
 /** [CONST] KDP delivery cost per MB of file size (70% plan, USD) */
 export const DELIVERY_COST_PER_MB_USD = 0.15
 
@@ -33,7 +36,7 @@ export const PAPERBACK_ROYALTY_RATE = 0.60
 
 // ── Types ──────────────────────────────────────────────────
 
-export type Currency = 'USD' | 'BRL'
+export type Currency = 'USD' | 'BRL' | 'EUR'
 export type RoyaltyTier = '35' | '70'
 export type PrintType = 'bw' | 'color'
 
@@ -68,17 +71,21 @@ export interface RoyaltyResult {
 // ── Helpers ────────────────────────────────────────────────
 
 function toUSD(amount: number, currency: Currency): number {
-  return currency === 'BRL' ? amount / USD_TO_BRL : amount
+  if (currency === 'BRL') return amount / USD_TO_BRL
+  if (currency === 'EUR') return amount * EUR_TO_USD
+  return amount
 }
 
 function fromUSD(amount: number, currency: Currency): number {
-  return currency === 'BRL' ? amount * USD_TO_BRL : amount
+  if (currency === 'BRL') return amount * USD_TO_BRL
+  if (currency === 'EUR') return amount / EUR_TO_USD
+  return amount
 }
 
 function fmtThreshold(usd: number, currency: Currency): string {
-  return currency === 'BRL'
-    ? `R$ ${(usd * USD_TO_BRL).toFixed(2)}`
-    : `US$ ${usd.toFixed(2)}`
+  if (currency === 'BRL') return `R$ ${(usd * USD_TO_BRL).toFixed(2)}`
+  if (currency === 'EUR') return `€ ${(usd / EUR_TO_USD).toFixed(2)}`
+  return `US$ ${usd.toFixed(2)}`
 }
 
 // ── Calculators ────────────────────────────────────────────

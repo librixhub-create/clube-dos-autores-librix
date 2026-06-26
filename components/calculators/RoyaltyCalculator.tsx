@@ -76,7 +76,7 @@ export default function RoyaltyCalculator() {
   const salesNum = Math.max(0, parseInt(monthlySales) || 0)
   const hasResult = priceNum > 0 && (format === 'ebook' || pagesNum > 0)
 
-  const currSym = currency === 'BRL' ? 'R$' : 'US$'
+  const currSym = currency === 'BRL' ? 'R$' : currency === 'EUR' ? '€' : 'US$'
 
   function fmt(val: number): string {
     const prefix = val < 0 ? '− ' : ''
@@ -122,6 +122,7 @@ export default function RoyaltyCalculator() {
                 aria-label="Moeda"
               >
                 <option value="BRL">BRL</option>
+                <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
               </select>
               <span className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-paper-muted text-xs" aria-hidden="true">▾</span>
