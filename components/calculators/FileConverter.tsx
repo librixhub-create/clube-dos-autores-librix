@@ -8,6 +8,9 @@ type Status = 'idle' | 'converting' | 'done' | 'error'
 const labelCls =
   'block font-mono text-paper-dim text-xs tracking-wider uppercase mb-1.5'
 
+// A4 at 96 dpi ≈ 794px — used as render width for the PDF canvas
+const A4_PX_WIDTH = 794
+
 export default function FileConverter() {
   const [mode, setMode] = useState<Mode>('docx-pdf')
   const [file, setFile] = useState<File | null>(null)
@@ -15,9 +18,10 @@ export default function FileConverter() {
   const [message, setMessage] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
+  // Accept .doc AND .docx for Word→PDF; .pdf for PDF→Word
   const accept =
     mode === 'docx-pdf'
-      ? '.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      ? '.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
       : '.pdf,application/pdf'
 
   function handleModeChange(newMode: Mode) {
@@ -41,7 +45,7 @@ export default function FileConverter() {
     if (!dropped) return
     const name = dropped.name.toLowerCase()
     const ok =
-      (mode === 'docx-pdf' && name.endsWith('.docx')) ||
+      (mode === 'docx-pdf' && (name.endsWith('.docx') || name.endsWith('.doc'))) ||
       (mode === 'pdf-docx' && name.endsWith('.pdf'))
     if (ok) {
       setFile(dropped)
@@ -56,10 +60,8 @@ export default function FileConverter() {
     setMessage('')
     try {
       if (mode === 'docx-pdf') {
-        await convertDocxToPdf(file)
-        setMessage(
-          'Documento aberto em nova aba — use Ctrl+P (ou Cmd+P) e escolha "Salvar como PDF".'
-        )
+        await convertWordToPdf(file)
+        setMessage('PDF gerado e baixado com sucesso.')
       } else {
         await convertPdfToDocx(file)
         setMessage('Arquivo Word (.docx) baixado com sucesso.')
@@ -73,52 +75,98 @@ export default function FileConverter() {
     }
   }
 
-  async function convertDocxToPdf(f: File) {
+  // ── Word (.doc / .docx) → PDF download ──────────────────────────────────
+  async function convertWordToPdf(f: File) {
     const arrayBuffer = await f.arrayBuffer()
-    // mammoth is dynamically imported for code-splitting
+
+    // mammoth converts DOCX/DOC → HTML
     const mammoth = await import('mammoth')
-    const convertToHtml =
-      mammoth.convertToHtml ?? (mammoth as unknown as { default: typeof mammoth }).default.convertToHtml
-    const { value: html } = await convertToHtml({ arrayBuffer })
+    const { value: html } = await mammoth.convertToHtml({ arrayBuffer })
 
     const baseName = f.name.replace(/\.docx?$/i, '')
-    const safeTitle = baseName.replace(/[<>&"]/g, (c) =>
-      ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c] ?? c)
-    )
 
-    const fullHtml = `<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>${safeTitle}</title>
-  <style>
-    @page { margin: 2.5cm; size: A4; }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.6; color: #000; background: #fff; }
-    h1 { font-size: 18pt; } h2 { font-size: 16pt; } h3 { font-size: 14pt; }
-    h1, h2, h3, h4, h5, h6 { margin: 0.8em 0 0.3em; line-height: 1.3; }
-    p { margin: 0 0 0.5em; }
-    table { border-collapse: collapse; width: 100%; margin: 0.5em 0; }
-    td, th { border: 1px solid #aaa; padding: 4px 8px; }
-    @media screen { body { max-width: 800px; margin: 2rem auto; padding: 0 2rem; background: #f0f0f0; } article { background: #fff; padding: 2.5rem 3rem; box-shadow: 0 2px 12px rgba(0,0,0,.12); } }
-  </style>
-</head>
-<body><article>${html}</article></body>
-</html>`
+    // Build a hidden A4-width container for html2canvas to render
+    const container = document.createElement('div')
+    Object.assign(container.style, {
+      position: 'fixed',
+      top: '0',
+      left: '-9999px',
+      width: `${A4_PX_WIDTH}px`,
+      background: '#ffffff',
+      color: '#000000',
+      fontFamily: '"Times New Roman", Times, serif',
+      fontSize: '12pt',
+      lineHeight: '1.6',
+      padding: '72px 64px',
+      boxSizing: 'border-box',
+    })
 
-    const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.target = '_blank'
-    a.rel = 'noopener noreferrer'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    // keep URL alive long enough for the tab to load before revoking
-    setTimeout(() => URL.revokeObjectURL(url), 60_000)
+    // Inject base styles so headings/tables render correctly
+    const styleEl = document.createElement('style')
+    styleEl.textContent = `
+      h1{font-size:18pt;margin:.8em 0 .3em}
+      h2{font-size:16pt;margin:.8em 0 .3em}
+      h3{font-size:14pt;margin:.8em 0 .3em}
+      h4,h5,h6{margin:.6em 0 .2em}
+      p{margin:0 0 .5em}
+      strong{font-weight:bold}
+      em{font-style:italic}
+      table{border-collapse:collapse;width:100%}
+      td,th{border:1px solid #888;padding:4px 8px}
+    `
+    container.appendChild(styleEl)
+
+    const contentEl = document.createElement('div')
+    contentEl.innerHTML = html
+    container.appendChild(contentEl)
+    document.body.appendChild(container)
+
+    try {
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import('html2canvas'),
+        import('jspdf'),
+      ])
+
+      const canvas = await html2canvas(container, {
+        scale: 1.5,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+      })
+
+      document.body.removeChild(container)
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.92)
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
+      const pageW = pdf.internal.pageSize.getWidth()   // 210 mm
+      const pageH = pdf.internal.pageSize.getHeight()  // 297 mm
+
+      // Scale canvas to fill the page width
+      const scaledW = pageW
+      const scaledH = (canvas.height / canvas.width) * pageW
+
+      // Add image slice per page
+      let posY = 0
+      let remaining = scaledH
+
+      pdf.addImage(imgData, 'JPEG', 0, posY, scaledW, scaledH)
+      remaining -= pageH
+
+      while (remaining > 0) {
+        posY -= pageH
+        pdf.addPage()
+        pdf.addImage(imgData, 'JPEG', 0, posY, scaledW, scaledH)
+        remaining -= pageH
+      }
+
+      pdf.save(`${baseName}.pdf`)
+    } catch (err) {
+      if (document.body.contains(container)) document.body.removeChild(container)
+      throw err
+    }
   }
 
+  // ── PDF → Word (.docx) download ──────────────────────────────────────────
   async function convertPdfToDocx(f: File) {
     const pdfjsLib = await import('pdfjs-dist')
     pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`
@@ -141,7 +189,7 @@ export default function FileConverter() {
     if (!pageTexts.length) {
       throw new Error(
         'Nenhum texto encontrado neste PDF. ' +
-          'O arquivo pode ser um documento digitalizado (imagem sem camada de texto).'
+          'O arquivo pode ser digitalizado (imagem sem camada de texto).'
       )
     }
 
@@ -157,18 +205,22 @@ export default function FileConverter() {
 
     const doc = new Document({ sections: [{ properties: {}, children: paragraphs }] })
     const blob = await Packer.toBlob(doc)
-
     const baseName = f.name.replace(/\.pdf$/i, '')
+    triggerDownload(blob, `${baseName}.docx`)
+  }
+
+  function triggerDownload(blob: Blob, filename: string) {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `${baseName}.docx`
+    a.download = filename
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
   }
 
+  // ── UI ────────────────────────────────────────────────────────────────────
   return (
     <div>
       {/* Mode toggle */}
@@ -207,7 +259,7 @@ export default function FileConverter() {
         role="button"
         tabIndex={0}
         onKeyDown={(e) => e.key === 'Enter' && inputRef.current?.click()}
-        aria-label={`Selecionar arquivo ${mode === 'docx-pdf' ? '.docx' : '.pdf'}`}
+        aria-label={`Selecionar arquivo ${mode === 'docx-pdf' ? '.doc ou .docx' : '.pdf'}`}
         className={
           'border-2 border-dashed rounded-sm p-10 text-center cursor-pointer ' +
           'transition-colors duration-150 mb-6 ' +
@@ -236,7 +288,7 @@ export default function FileConverter() {
               Arraste o arquivo ou clique para selecionar
             </p>
             <p className="font-sans text-paper-muted text-xs">
-              {mode === 'docx-pdf' ? 'Aceita .docx (Word)' : 'Aceita .pdf'}
+              {mode === 'docx-pdf' ? 'Aceita .doc e .docx (Word)' : 'Aceita .pdf'}
             </p>
           </>
         )}
@@ -257,11 +309,11 @@ export default function FileConverter() {
         {status === 'converting'
           ? 'Convertendo…'
           : mode === 'docx-pdf'
-          ? 'Converter Word → PDF'
-          : 'Converter PDF → Word'}
+          ? 'Converter e baixar PDF'
+          : 'Converter e baixar Word (.docx)'}
       </button>
 
-      {/* Status / result message */}
+      {/* Status message */}
       {message && (
         <div
           role="status"
@@ -281,15 +333,15 @@ export default function FileConverter() {
           >
             {message}
           </p>
-          {status === 'done' && mode === 'docx-pdf' && (
-            <p className="font-mono text-paper-muted text-xs mt-2">
-              Windows: Ctrl+P → impressora &quot;Salvar como PDF&quot; · Mac: Cmd+P → botão PDF
-            </p>
-          )}
         </div>
       )}
 
-      {/* PDF→DOCX quality note (shown before upload) */}
+      {/* Inline notes */}
+      {mode === 'docx-pdf' && !file && (
+        <p className="font-sans text-paper-muted text-xs mt-4 leading-relaxed">
+          Gera um PDF pronto para download. Documentos com formatação simples convertem melhor.
+        </p>
+      )}
       {mode === 'pdf-docx' && !file && (
         <p className="font-sans text-paper-muted text-xs mt-4 leading-relaxed">
           Extrai o texto do PDF e gera um .docx editável.
