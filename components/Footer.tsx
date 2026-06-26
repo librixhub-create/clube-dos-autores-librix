@@ -1,5 +1,5 @@
 const WA_CTA =
-  'https://wa.me/5532998491620?text=Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB'
+  'https://wa.me/5532998491620?text=Quero+entrar+na+LIBRIX+ACADEMY'
 const WA_CONTACT = 'https://wa.me/5532998491620'
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
             Pronto para publicar com mais confiança?
           </h2>
           <p className="font-sans text-paper-dim text-base sm:text-lg mb-8 max-w-md mx-auto">
-            Entre para o Clube do Autor e tenha tudo que precisa por €49/mês.
+            Entre para a LIBRIX ACADEMY e tenha tudo que precisa por €49/mês.
           </p>
           <a
             href={WA_CTA}
@@ -28,15 +28,20 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="inline-block bg-terra text-paper font-sans font-bold text-base px-10 py-4 rounded hover:bg-terra-light transition-colors duration-200"
           >
-            Entrar no Clube agora
+            Entrar na Academy agora
           </a>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-gold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <p className="font-serif text-gold text-lg font-bold tracking-widest">
-            LIBRIX HUB
-          </p>
+          <div>
+            <p className="font-serif text-gold text-lg font-bold tracking-widest">
+              LIBRIX ACADEMY
+            </p>
+            <p className="font-mono text-paper-muted text-xs mt-0.5">
+              Escrever é arte. Publicar é estratégia.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center">
             <a
@@ -77,7 +82,7 @@ export default function Footer() {
           </div>
 
           <p className="font-sans text-paper-muted text-xs">
-            © {year} LIBRIX HUB. Todos os direitos reservados.
+            © {year} LIBRIX ACADEMY. Todos os direitos reservados.
           </p>
         </div>
       </div>

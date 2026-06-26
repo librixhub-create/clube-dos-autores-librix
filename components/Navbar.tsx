@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const WA_URL =
-  'https://wa.me/5532998491620?text=Quero+entrar+no+Clube+do+Autor+LIBRIX+HUB'
+  'https://wa.me/5532998491620?text=Quero+entrar+na+LIBRIX+ACADEMY'
 
 export default function Navbar() {
   return (
@@ -13,7 +13,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-baseline gap-1.5"
-          aria-label="LIBRIX HUB — página inicial"
+          aria-label="LIBRIX ACADEMY — página inicial"
         >
           <span className="font-serif text-xl font-bold text-gold tracking-wider">
             LIBRIX

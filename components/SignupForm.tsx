@@ -34,7 +34,7 @@ export default function SignupForm() {
     if (!canSubmit) return
     const emailPart = email ? ` (${email})` : ''
     const msg =
-      `Olá! Me chamo ${name.trim()}${emailPart} e gostaria de agendar uma reunião de apresentação do Clube do Autor LIBRIX HUB para o dia ${formatDate(date)} às ${time}. Aguardo confirmação!`
+      `Olá! Me chamo ${name.trim()}${emailPart} e gostaria de agendar uma reunião de apresentação da LIBRIX ACADEMY para o dia ${formatDate(date)} às ${time}. Aguardo confirmação!`
     window.open(`${WA_BASE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
   }
 

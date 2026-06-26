@@ -10,22 +10,22 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full py-20 sm:py-28">
         <div className="max-w-3xl">
           <p className="font-mono text-gold/70 text-xs sm:text-sm tracking-widest uppercase mb-5">
-            Clube do Autor · LIBRIX HUB
+            LIBRIX ACADEMY · Academia do Autor
           </p>
 
           <h1
             id="hero-heading"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-paper leading-tight mb-6 text-balance"
           >
-            Tudo que você precisa para{' '}
+            Escrever é arte.{' '}
             <em className="not-italic text-gold">
-              publicar bem na Amazon
+              Publicar é estratégia.
             </em>
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-paper-dim max-w-xl mb-6 leading-relaxed">
-            O Clube do Autor LIBRIX HUB é a assinatura mensal que entrega
-            templates, checklists, revisões e consultoria personalizada para autores
+            A LIBRIX ACADEMY é a academia mensal que entrega templates,
+            checklists, revisões e consultoria personalizada para autores
             independentes que publicam na Amazon KDP.
           </p>
 

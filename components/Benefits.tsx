@@ -28,7 +28,7 @@ const BENEFITS: Benefit[] = [
   {
     mark: '%',
     title: '20% de desconto em consultorias',
-    body: 'Membros do Clube têm 20% de desconto em qualquer consultoria avulsa da LIBRIX HUB — direto no preço, sem cupom.',
+    body: 'Membros da Academy têm 20% de desconto em qualquer consultoria avulsa da LIBRIX ACADEMY — direto no preço, sem cupom.',
   },
   {
     mark: '∞',
@@ -53,7 +53,7 @@ export default function Benefits() {
             id="benefits-heading"
             className="font-serif text-3xl sm:text-4xl font-bold text-paper"
           >
-            Tudo num clube só
+            Tudo na sua academia
           </h2>
         </header>
 

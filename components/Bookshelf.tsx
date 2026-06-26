@@ -20,7 +20,7 @@ export default function Bookshelf() {
       <div
         className="flex items-end gap-2 sm:gap-3 overflow-x-auto"
         role="img"
-        aria-label="Estante com os seis benefícios do Clube do Autor: Templates, Checklist KDP, Revisão, Consultoria, Desconto e Liberdade"
+        aria-label="Estante com os seis benefícios da LIBRIX ACADEMY: Templates, Checklist KDP, Revisão, Consultoria, Desconto e Liberdade"
       >
         {BOOKS.map((book) => (
           <div

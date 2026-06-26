@@ -113,7 +113,7 @@ export default function Pricing() {
         <div className="flex justify-center">
           <div className="w-full max-w-sm">
             <PlanCard
-              region="Clube do Autor"
+              region="LIBRIX ACADEMY"
               badge="Plano Mensal · 7 dias grátis"
               sym="€"
               whole="49"

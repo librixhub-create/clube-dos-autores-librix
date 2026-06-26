@@ -17,7 +17,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'O que é a consultoria personalizada via call?',
-    a: 'Uma sessão individual por videochamada para tirar dúvidas, revisar sua estratégia de publicação ou planejar seu próximo lançamento. O agendamento é feito diretamente com a equipe LIBRIX HUB após a assinatura.',
+    a: 'Uma sessão individual por videochamada para tirar dúvidas, revisar sua estratégia de publicação ou planejar seu próximo lançamento. O agendamento é feito diretamente com a equipe LIBRIX ACADEMY após a assinatura.',
   },
   {
     q: 'O Clube funciona para autores fora do Brasil?',

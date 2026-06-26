@@ -49,7 +49,7 @@ export default function CalculadorasPage() {
           {/* Header */}
           <header className="mb-10">
             <p className="font-mono text-gold/70 text-xs tracking-widest uppercase mb-3">
-              Ferramentas gratuitas · LIBRIX HUB
+              Ferramentas gratuitas · LIBRIX ACADEMY
             </p>
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-paper mb-3">
               Ferramentas para Autores
