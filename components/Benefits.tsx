@@ -26,6 +26,11 @@ const BENEFITS: Benefit[] = [
     body: 'Sessão individual por videochamada para tirar dúvidas, revisar sua estratégia ou planejar seu próximo lançamento.',
   },
   {
+    mark: '⊕',
+    title: 'Site + blog profissional com 15% OFF',
+    body: 'Membros da Academy têm 15% de desconto na criação de um site com blog profissional para divulgar seus livros e construir presença digital como autor publicado.',
+  },
+  {
     mark: '%',
     title: '20% de desconto em consultorias',
     body: 'Membros da Academy têm 20% de desconto em qualquer consultoria avulsa da LIBRIX ACADEMY — direto no preço, sem cupom.',
@@ -58,10 +63,15 @@ export default function Benefits() {
         </header>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5" role="list">
-          {BENEFITS.map((benefit) => (
+          {BENEFITS.map((benefit, idx) => (
             <li
               key={benefit.title}
-              className="border border-gold/15 rounded-sm p-6 bg-ink hover:border-gold/35 transition-colors duration-200"
+              className={
+                'border border-gold/15 rounded-sm p-6 bg-ink hover:border-gold/35 transition-colors duration-200' +
+                (idx === BENEFITS.length - 1 && BENEFITS.length % 2 !== 0
+                  ? ' sm:col-span-2'
+                  : '')
+              }
             >
               <span
                 className="font-mono text-2xl text-gold block mb-4 select-none"
