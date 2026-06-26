@@ -1,5 +1,3 @@
-const WA_BRL =
-  'https://wa.me/5532998491620?text=Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB'
 const WA_EUR =
   'https://wa.me/5532998491620?text=Olá!+Quero+assinar+o+Clube+do+Autor+LIBRIX+HUB+—+plano+Europa+(€49%2Fmês)'
 
@@ -122,31 +120,23 @@ export default function Pricing() {
             Simples assim
           </h2>
           <p className="font-sans text-paper-dim text-sm mt-3 max-w-sm mx-auto">
-            Mesmo clube, mesma qualidade — escolha a moeda que funciona para você.
+            Tudo que você precisa para publicar bem na Amazon, por um valor fixo mensal.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <PlanCard
-            region="Brasil"
-            badge="Plano Mensal"
-            sym="R$"
-            whole="34"
-            cents=",90"
-            annualLine="Prefere anual? R$ 297/ano — 2 meses grátis"
-            cta="Quero assinar agora"
-            waUrl={WA_BRL}
-          />
-          <PlanCard
-            region="Europa"
-            badge="Plano Mensal"
-            sym="€"
-            whole="49"
-            annualLine="Prefere anual? € 469/ano — 2+ meses grátis"
-            extra="Pacotes prontos de planejamento para lançamento do seu livro"
-            cta="Quero assinar agora"
-            waUrl={WA_EUR}
-          />
+        <div className="flex justify-center">
+          <div className="w-full max-w-sm">
+            <PlanCard
+              region="Clube do Autor"
+              badge="Plano Mensal"
+              sym="€"
+              whole="49"
+              annualLine="Prefere anual? € 469/ano — 2+ meses grátis"
+              extra="Pacotes prontos de planejamento para lançamento do seu livro"
+              cta="Quero assinar agora"
+              waUrl={WA_EUR}
+            />
+          </div>
         </div>
       </div>
     </section>
