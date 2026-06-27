@@ -11,6 +11,11 @@ const BENEFITS: Benefit[] = [
     body: 'Capa, descrição e roteiro de lançamento: materiais profissionais alinhados às melhores práticas da Amazon KDP, sempre frescos.',
   },
   {
+    mark: '◈',
+    title: '10 artes de social media por mês',
+    body: 'Pacote mensal com 10 artes profissionais prontas para divulgar seu livro nas redes sociais — atualizadas todo mês e adaptadas para Instagram, Facebook e LinkedIn.',
+  },
+  {
     mark: '✓',
     title: 'Checklist de publicação KDP',
     body: 'Checklist completo e atualizado para garantir que seu livro seja publicado sem erros — nunca mais esqueça um passo.',
