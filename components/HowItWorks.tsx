@@ -66,7 +66,7 @@ export default function HowItWorks() {
         <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
             href="#planos"
-            className="bg-gold text-ink font-sans font-bold text-base px-8 py-3 rounded hover:bg-gold-light transition-colors duration-200"
+            className="bg-gold text-white font-sans font-bold text-base px-8 py-3 rounded hover:bg-gold-light transition-colors duration-200"
           >
             Agendar reunião gratuita
           </a>

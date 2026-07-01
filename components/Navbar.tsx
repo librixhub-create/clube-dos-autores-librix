@@ -66,7 +66,7 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terra text-paper font-sans text-sm font-semibold px-4 py-2 rounded hover:bg-terra-light transition-colors duration-200"
+            className="bg-terra text-ink-deep font-sans text-sm font-semibold px-4 py-2 rounded hover:bg-terra-light transition-colors duration-200"
           >
             Entrar na Academy
           </a>
@@ -78,7 +78,7 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terra text-paper font-sans text-xs font-semibold px-3 py-2 rounded hover:bg-terra-light transition-colors duration-200"
+            className="bg-terra text-ink-deep font-sans text-xs font-semibold px-3 py-2 rounded hover:bg-terra-light transition-colors duration-200"
           >
             Entrar
           </a>
@@ -173,7 +173,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-2 block w-full bg-terra text-paper font-sans font-semibold text-sm py-3 rounded text-center hover:bg-terra-light transition-colors duration-200"
+            className="mt-2 block w-full bg-terra text-ink-deep font-sans font-semibold text-sm py-3 rounded text-center hover:bg-terra-light transition-colors duration-200"
           >
             Entrar na Academy
           </a>

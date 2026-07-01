@@ -67,7 +67,7 @@ export default function Pricing() {
         </header>
 
         <div className="flex justify-center">
-          <div className="w-full max-w-3xl">
+          <div className="w-full max-w-3xl shadow-glow-purple">
 
             {/* Outer stamp border */}
             <div className="border-2 border-gold p-1.5">

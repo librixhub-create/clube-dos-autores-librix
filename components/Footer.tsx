@@ -26,7 +26,7 @@ export default function Footer() {
             href={WA_CTA}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-terra text-paper font-sans font-bold text-base px-10 py-4 rounded hover:bg-terra-light transition-colors duration-200"
+            className="inline-block bg-terra text-ink-deep font-sans font-bold text-base px-10 py-4 rounded hover:bg-terra-light transition-colors duration-200"
           >
             Entrar na Academy agora
           </a>
