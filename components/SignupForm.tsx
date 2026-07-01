@@ -100,7 +100,7 @@ export default function SignupForm() {
       <button
         type="submit"
         disabled={!canSubmit}
-        className="w-full bg-gold text-white font-sans font-bold text-base py-3 px-6 rounded text-center hover:bg-gold-light transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed mt-1"
+        className="w-full bg-gold text-ink-deep font-sans font-bold text-base py-3 px-6 rounded text-center hover:bg-gold-light transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed mt-1"
       >
         Agendar reunião pelo WhatsApp
       </button>

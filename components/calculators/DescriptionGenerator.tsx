@@ -292,7 +292,7 @@ export default function DescriptionGenerator() {
         <button
           type="submit"
           disabled={!canGenerate}
-          className="w-full bg-gold text-white font-sans font-bold text-sm py-3 rounded hover:bg-gold-light transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="w-full bg-gold text-ink-deep font-sans font-bold text-sm py-3 rounded hover:bg-gold-light transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Gerar descrição
         </button>

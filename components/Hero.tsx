@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href="#planos"
-              className="bg-gold text-white font-sans font-bold text-base px-8 py-3 rounded text-center hover:bg-gold-light transition-colors duration-200"
+              className="bg-gold text-ink-deep font-sans font-bold text-base px-8 py-3 rounded text-center hover:bg-gold-light transition-colors duration-200"
             >
               Ver planos
             </a>

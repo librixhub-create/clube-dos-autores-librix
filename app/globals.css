@@ -22,24 +22,24 @@
   }
 
   :focus-visible {
-    outline: 2px solid #a855f7;
+    outline: 2px solid #9c7a4a;
     outline-offset: 3px;
     border-radius: 2px;
   }
 
-  /* Aurora glow — signature of professional dark sites */
+  /* Subtle warm vignette — professional editorial sites */
   body {
     background-image:
-      radial-gradient(ellipse 80% 45% at 50% 0%, rgba(168, 85, 247, 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 30% at 80% 60%, rgba(168, 85, 247, 0.04) 0%, transparent 60%);
+      radial-gradient(ellipse 90% 50% at 50% 0%, rgba(224, 214, 196, 0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 30% at 90% 70%, rgba(156, 122, 74, 0.03) 0%, transparent 60%);
     background-attachment: fixed;
   }
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #09090f; }
-  ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #c084fc; }
+  ::-webkit-scrollbar-track { background: #111111; }
+  ::-webkit-scrollbar-thumb { background: #9c7a4a; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #b08c58; }
 }
 
 @layer utilities {
