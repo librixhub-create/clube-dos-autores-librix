@@ -7,8 +7,10 @@ import SpineCalculator from '@/components/calculators/SpineCalculator'
 import FileConverter from '@/components/calculators/FileConverter'
 import KeywordGenerator from '@/components/calculators/KeywordGenerator'
 import PriceCalculator from '@/components/calculators/PriceCalculator'
+import LaunchChecklist from '@/components/calculators/LaunchChecklist'
+import DescriptionGenerator from '@/components/calculators/DescriptionGenerator'
 
-type Tab = 'royalties' | 'lombada' | 'conversor' | 'keywords' | 'preco'
+type Tab = 'royalties' | 'lombada' | 'conversor' | 'keywords' | 'preco' | 'checklist' | 'descricao'
 
 const TABS: { id: Tab; label: string; description: string }[] = [
   {
@@ -35,6 +37,16 @@ const TABS: { id: Tab; label: string; description: string }[] = [
     id: 'preco',
     label: 'Preço',
     description: 'Descubra o preço mínimo para atingir sua meta de renda',
+  },
+  {
+    id: 'checklist',
+    label: 'Lançamento',
+    description: 'Checklist interativo completo para lançar seu livro no KDP',
+  },
+  {
+    id: 'descricao',
+    label: 'Descrição',
+    description: 'Gere um rascunho de descrição otimizada para o KDP',
   },
 ]
 
@@ -136,6 +148,24 @@ export default function CalculadorasPage() {
             hidden={activeTab !== 'preco'}
           >
             <PriceCalculator />
+          </div>
+
+          <div
+            id="panel-checklist"
+            role="tabpanel"
+            aria-labelledby="tab-checklist"
+            hidden={activeTab !== 'checklist'}
+          >
+            <LaunchChecklist />
+          </div>
+
+          <div
+            id="panel-descricao"
+            role="tabpanel"
+            aria-labelledby="tab-descricao"
+            hidden={activeTab !== 'descricao'}
+          >
+            <DescriptionGenerator />
           </div>
         </div>
       </main>
