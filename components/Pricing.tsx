@@ -1,5 +1,4 @@
 import SignupForm from './SignupForm'
-import Portfolio from './Portfolio'
 
 const WA_BASE = 'https://wa.me/5532998491620'
 
@@ -10,8 +9,6 @@ function waLink(planName: string) {
 type Plan = {
   name: string
   audience: string
-  price: string
-  period?: string
   includes: string[]
   cta: string
   highlight?: boolean
@@ -21,7 +18,6 @@ const PUBLICATION_PLANS: Plan[] = [
   {
     name: 'Publicação Start',
     audience: 'Para quem está lançando o primeiro livro',
-    price: '[PREÇO]',
     includes: [
       'Revisão de texto (1 rodada)',
       'Diagramação padrão',
@@ -33,7 +29,6 @@ const PUBLICATION_PLANS: Plan[] = [
   {
     name: 'Publicação Completa',
     audience: 'Para quem quer um lançamento mais robusto',
-    price: '[PREÇO]',
     includes: [
       'Tudo do Publicação Start',
       'Revisão aprofundada (2 rodadas)',
@@ -48,8 +43,6 @@ const PUBLICATION_PLANS: Plan[] = [
   {
     name: 'Publicação + Academy',
     audience: 'Para quem quer publicar e ter suporte contínuo todo mês',
-    price: '[PREÇO]',
-    period: '/mês',
     includes: [
       'Tudo do Publicação Completa',
       'Templates mensais de capa e lançamento',
@@ -65,7 +58,6 @@ const SITE_PLANS: Plan[] = [
   {
     name: 'Site Essencial',
     audience: 'Para quem precisa de presença digital simples e profissional',
-    price: '[PREÇO]',
     includes: [
       'Site de 1 página (bio, livros, contato)',
       'Domínio próprio',
@@ -77,7 +69,6 @@ const SITE_PLANS: Plan[] = [
   {
     name: 'Site + Blog',
     audience: 'Para quem quer publicar conteúdo e crescer audiência',
-    price: '[PREÇO]',
     includes: [
       'Tudo do Site Essencial',
       'Blog integrado com categorias',
@@ -90,7 +81,6 @@ const SITE_PLANS: Plan[] = [
   {
     name: 'Site + Loja do Autor',
     audience: 'Para quem quer vender e divulgar livros direto pelo site',
-    price: '[PREÇO]',
     includes: [
       'Tudo do Site + Blog',
       'Integração com Amazon Author Page',
@@ -120,18 +110,9 @@ function PlanCard({ plan }: { plan: Plan }) {
       <h4 className="font-serif text-xl font-semibold text-paper mb-1.5">
         {plan.name}
       </h4>
-      <p className="font-sans text-paper-muted text-xs leading-relaxed mb-6">
+      <p className="font-sans text-paper-muted text-xs leading-relaxed mb-6 pb-6 border-b border-gold/10">
         {plan.audience}
       </p>
-
-      <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-gold/10">
-        <span className="font-mono text-gold font-bold text-3xl leading-none">
-          {plan.price}
-        </span>
-        {plan.period && (
-          <span className="font-mono text-paper-muted text-xs">{plan.period}</span>
-        )}
-      </div>
 
       <ul className="space-y-3 mb-8 flex-1" role="list">
         {plan.includes.map((item) => (
@@ -168,13 +149,11 @@ function Track({
   title,
   description,
   plans,
-  children,
 }: {
   eyebrow: string
   title: string
   description: string
   plans: Plan[]
-  children?: React.ReactNode
 }) {
   return (
     <div className="mb-24 last:mb-0">
@@ -195,8 +174,6 @@ function Track({
           <PlanCard key={plan.name} plan={plan} />
         ))}
       </div>
-
-      {children}
     </div>
   )
 }
@@ -211,7 +188,7 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         <header className="mb-14 text-center">
           <p className="font-mono text-gold/60 text-xs tracking-widest uppercase mb-3">
-            Investimento
+            Planos
           </p>
           <h2
             id="pricing-heading"
@@ -221,7 +198,7 @@ export default function Pricing() {
           </h2>
           <p className="font-sans text-paper-dim text-sm mt-3 max-w-md mx-auto">
             Escolha publicar seu livro, construir seu site de autor, ou seguir
-            os dois caminhos. Comece com uma reunião gratuita.
+            os dois caminhos. Fale com a gente e receba uma proposta sob medida.
           </p>
         </header>
 
@@ -237,9 +214,7 @@ export default function Pricing() {
           title="Planos de Criação de Site para Autores"
           description="Site com blog, domínio, hospedagem, integração com sua loja de livros e SEO básico — sua casa digital como autor."
           plans={SITE_PLANS}
-        >
-          <Portfolio />
-        </Track>
+        />
 
         {/* Bottom CTA — schedule call */}
         <div className="mt-24 max-w-2xl mx-auto shadow-glow-purple rounded-sm">
