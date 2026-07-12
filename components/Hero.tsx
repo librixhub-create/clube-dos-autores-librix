@@ -10,23 +10,22 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full py-20 sm:py-28">
         <div className="max-w-3xl">
           <p className="font-mono text-gold/70 text-xs sm:text-sm tracking-widest uppercase mb-5">
-            LIBRIX ACADEMY · Academia do Autor
+            LIBRIX ACADEMY · Publicação &amp; Presença Digital para Autores
           </p>
 
           <h1
             id="hero-heading"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-paper leading-tight mb-6 text-balance"
           >
-            Escrever é arte.{' '}
-            <em className="not-italic text-gold">
-              Publicar é estratégia.
-            </em>
+            Publique.{' '}
+            <em className="not-italic text-gold">Apareça. Venda.</em>
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-paper-dim max-w-xl mb-6 leading-relaxed">
-            A LIBRIX ACADEMY é a academia mensal que entrega templates,
-            checklists, revisões e consultoria personalizada para autores
-            independentes que publicam na Amazon KDP.
+            A LIBRIX ACADEMY cuida dos dois pilares da carreira do autor
+            independente: publicamos seu livro com qualidade profissional na
+            Amazon KDP e construímos sua casa digital — site com blog, loja
+            integrada e SEO — para você ser encontrado e vender mais.
           </p>
 
           {/* Geographic availability */}
@@ -52,7 +51,7 @@ export default function Hero() {
               ))}
             </div>
             <p className="font-sans text-paper-dim text-sm">
-              <span className="text-paper font-semibold">+45 autores</span> já publicando com o Clube
+              <span className="text-paper font-semibold">+45 autores</span> já publicando e com presença digital pela Academy
             </p>
           </div>
 

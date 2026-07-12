@@ -4,24 +4,32 @@ import { useState } from 'react'
 
 const FAQ_ITEMS = [
   {
-    q: 'Posso cancelar quando quiser?',
-    a: 'Sim. Sem fidelidade, sem prazo mínimo e sem multa. Basta avisar e cancelamos na hora — sem burocracia e sem perguntas.',
+    q: 'Preciso contratar publicação e site juntos?',
+    a: 'Não. São duas trilhas independentes — você pode contratar só a publicação do seu livro, só a criação do seu site com blog, ou os dois combinados. Na call gratuita ajudamos você a decidir o que faz mais sentido agora.',
   },
   {
-    q: 'O Clube serve para quem está começando do zero?',
-    a: 'Sim! Os materiais foram pensados tanto para estreantes quanto para autores que já têm livros publicados. O checklist e os templates ajudam quem publica pela primeira vez a não pular nenhuma etapa importante.',
+    q: 'Posso cancelar quando quiser?',
+    a: 'Sim, nos planos de assinatura mensal. Sem fidelidade, sem prazo mínimo e sem multa. Basta avisar e cancelamos na hora — sem burocracia e sem perguntas.',
+  },
+  {
+    q: 'A Academy serve para quem está começando do zero?',
+    a: 'Sim! Os planos foram pensados tanto para estreantes quanto para autores que já têm livros publicados ou já têm um site. O checklist e os templates ajudam quem publica pela primeira vez a não pular nenhuma etapa importante.',
+  },
+  {
+    q: 'Como funciona a criação do site com blog?',
+    a: 'Depois de definido o plano, cuidamos de domínio, hospedagem, design e blog integrado ao seu perfil de autor. Você aprova o conteúdo em cada etapa antes de irmos ao ar.',
   },
   {
     q: 'Como funciona a revisão mensal?',
-    a: 'Você envia sua capa ou descrição de livro pelo canal de comunicação do Clube e recebe um feedback especializado em até 5 dias úteis. É uma avaliação personalizada, feita por um especialista — não automática.',
+    a: 'Você envia sua capa, descrição de livro ou página do site pelo canal de comunicação da Academy e recebe um feedback especializado em até 5 dias úteis. É uma avaliação personalizada, feita por um especialista — não automática.',
   },
   {
     q: 'O que é a consultoria personalizada via call?',
-    a: 'Uma sessão individual por videochamada para tirar dúvidas, revisar sua estratégia de publicação ou planejar seu próximo lançamento. O agendamento é feito diretamente com a equipe LIBRIX ACADEMY após a assinatura.',
+    a: 'Uma sessão individual por videochamada para tirar dúvidas, revisar sua estratégia de publicação ou de presença digital. O agendamento é feito diretamente com a equipe LIBRIX ACADEMY após a assinatura.',
   },
   {
-    q: 'O Clube funciona para autores fora do Brasil?',
-    a: 'Sim. O Plano Europa (€49/mês) foi criado especificamente para autores que publicam no mercado europeu. Todos os materiais são em português e cobrem tanto a Amazon Brasil quanto a europeia.',
+    q: 'A Academy funciona para autores fora do Brasil?',
+    a: 'Sim. Os planos para o mercado europeu foram criados especificamente para autores que publicam ou vendem na Europa. Todos os materiais são em português e cobrem tanto a Amazon Brasil quanto a europeia.',
   },
   {
     q: 'Como e quando recebo os materiais?',

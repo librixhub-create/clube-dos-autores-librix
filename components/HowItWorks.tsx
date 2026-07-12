@@ -6,13 +6,13 @@ const STEPS = [
   },
   {
     num: '02',
-    title: 'Conheça o Clube na call',
-    body: 'Em uma reunião rápida apresentamos tudo que você vai receber como membro. Tire suas dúvidas, sem compromisso de assinatura.',
+    title: 'Conheça a Academy na call',
+    body: 'Em uma reunião rápida apresentamos os planos de publicação e de criação de site, e ajudamos você a escolher o caminho certo. Sem compromisso.',
   },
   {
     num: '03',
-    title: 'Assine e publique com mais confiança',
-    body: 'Decidiu assinar? Acesse todos os materiais imediatamente e comece a publicar melhor na Amazon KDP — com 7 dias de garantia.',
+    title: 'Escolha seu plano e comece',
+    body: 'Publicamos seu livro, construímos seu site de autor, ou os dois juntos — você decide o que faz sentido agora. Tudo com 7 dias de garantia.',
   },
 ]
 

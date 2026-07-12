@@ -22,20 +22,20 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'LIBRIX ACADEMY | Academia do Autor',
+  title: 'LIBRIX ACADEMY | Publicação e Sites para Autores',
   description:
-    'Escrever é arte. Publicar é estratégia. A academia mensal para autores independentes que publicam na Amazon KDP. Templates, checklists, revisões e consultoria personalizada por €49/mês.',
+    'Publique. Apareça. Venda. A academia que publica seu livro na Amazon KDP e constrói seu site com blog, para autores independentes que querem presença digital própria.',
   openGraph: {
-    title: 'LIBRIX ACADEMY | Academia do Autor',
+    title: 'LIBRIX ACADEMY | Publicação e Sites para Autores',
     description:
-      'Escrever é arte. Publicar é estratégia. A academia para autores independentes que publicam na Amazon KDP.',
+      'Publicamos seu livro com qualidade profissional e construímos sua casa digital — site com blog, loja integrada e SEO.',
     type: 'website',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'LIBRIX ACADEMY — Academia do Autor',
+        alt: 'LIBRIX ACADEMY — Publicação e Sites para Autores',
       },
     ],
   },

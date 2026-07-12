@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from 'react'
 
 const STATS = [
-  { value: 45, suffix: '+', label: 'Autores no Clube', note: 'e crescendo todo mês' },
-  { value: 120, suffix: '+', label: 'Livros publicados', note: 'com apoio da Academy' },
-  { value: 4.9, suffix: '★', label: 'Avaliação média', note: 'pelos membros ativos', decimal: true },
-  { value: 49, prefix: '€', label: 'Por mês, tudo incluído', note: 'sem surpresas, sem taxa extra' },
+  { value: 45, prefix: '', suffix: '+', label: 'Autores atendidos', note: 'e crescendo todo mês', decimal: false },
+  { value: 120, prefix: '', suffix: '+', label: 'Livros publicados', note: 'com apoio da Academy', decimal: false },
+  { value: 4.9, prefix: '', suffix: '★', label: 'Avaliação média', note: 'pelos membros ativos', decimal: true },
+  { value: 2, prefix: '', suffix: '', label: 'Especialidades', note: 'Publicação e Sites de Autor', decimal: false },
 ]
 
 function Counter({

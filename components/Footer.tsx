@@ -17,10 +17,10 @@ export default function Footer() {
             Comece hoje
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-paper mb-4 text-balance">
-            Pronto para publicar com mais confiança?
+            Pronto para publicar e ter sua casa digital?
           </h2>
           <p className="font-sans text-paper-dim text-base sm:text-lg mb-8 max-w-md mx-auto">
-            Entre para a LIBRIX ACADEMY e tenha tudo que precisa por €49/mês.
+            Entre para a LIBRIX ACADEMY e tenha tudo que precisa para publicar e construir sua presença online.
           </p>
           <a
             href={WA_CTA}
@@ -39,7 +39,7 @@ export default function Footer() {
               LIBRIX ACADEMY
             </p>
             <p className="font-mono text-paper-muted text-xs mt-0.5">
-              Escrever é arte. Publicar é estratégia.
+              Publique. Apareça. Venda.
             </p>
           </div>
 

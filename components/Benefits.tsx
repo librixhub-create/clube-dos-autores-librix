@@ -7,23 +7,23 @@ type Benefit = {
 const BENEFITS: Benefit[] = [
   {
     mark: '§',
-    title: 'Templates sempre atualizados',
-    body: 'Capa, descrição e roteiro de lançamento: materiais profissionais alinhados às melhores práticas da Amazon KDP, sempre frescos.',
+    title: 'Publicação profissional na Amazon KDP',
+    body: 'Revisão, diagramação, capa e checklist completo de publicação — do arquivo final ao livro no ar, sem erros e sem perrengue.',
+  },
+  {
+    mark: '⊕',
+    title: 'Site com blog para autores',
+    body: 'Sua casa digital: site profissional com blog integrado, domínio próprio e hospedagem, para você ser encontrado além da Amazon.',
   },
   {
     mark: '◈',
     title: '10 artes de social media por mês',
-    body: 'Pacote mensal com 10 artes profissionais prontas para divulgar seu livro nas redes sociais — atualizadas todo mês e adaptadas para Instagram, Facebook e LinkedIn.',
-  },
-  {
-    mark: '✓',
-    title: 'Checklist de publicação KDP',
-    body: 'Checklist completo e atualizado para garantir que seu livro seja publicado sem erros — nunca mais esqueça um passo.',
+    body: 'Pacote mensal com 10 artes profissionais prontas para divulgar seu livro e seu site nas redes sociais — Instagram, Facebook e LinkedIn.',
   },
   {
     mark: '☰',
-    title: 'Guia Completo de Publicação KDP',
-    body: 'Guia passo a passo com tudo que você precisa saber para publicar na Amazon KDP — formatação, preços, palavras-chave, categorias e estratégia de visibilidade.',
+    title: 'Loja e integração com Amazon Author Page',
+    body: 'Conectamos seu site à sua página de autor e aos links de compra do seu livro, para transformar visita em venda.',
   },
   {
     mark: '◆',
@@ -33,17 +33,12 @@ const BENEFITS: Benefit[] = [
   {
     mark: '◎',
     title: '1 revisão mensal',
-    body: 'Todo mês, você envia sua capa ou descrição e recebe um feedback especializado para publicar com mais confiança.',
+    body: 'Todo mês, você envia sua capa, descrição ou página do site e recebe um feedback especializado para publicar com mais confiança.',
   },
   {
     mark: '⬡',
     title: 'Consultoria personalizada via call',
-    body: 'Sessão individual por videochamada para tirar dúvidas, revisar sua estratégia ou planejar seu próximo lançamento.',
-  },
-  {
-    mark: '⊕',
-    title: 'Site + blog profissional com 15% OFF',
-    body: 'Membros da Academy têm 15% de desconto na criação de um site com blog profissional para divulgar seus livros e construir presença digital como autor publicado.',
+    body: 'Sessão individual por videochamada para tirar dúvidas, revisar sua estratégia de publicação ou de presença digital.',
   },
   {
     mark: '∞',
