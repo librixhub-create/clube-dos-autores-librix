@@ -15,7 +15,7 @@ export default function MetodoForm() {
     if (!canSubmit) return
     const emailPart = email ? ` (${email})` : ''
     const msg =
-      `Olá! Quero adquirir o Método Amazon Autor por €47. Me chamo ${name.trim()}${emailPart}. Como faço o pagamento?`
+      `Olá! Quero adquirir o Método Amazon Autor por €10. Me chamo ${name.trim()}${emailPart}. Como faço o pagamento?`
     window.open(`${WA_BASE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
   }
 

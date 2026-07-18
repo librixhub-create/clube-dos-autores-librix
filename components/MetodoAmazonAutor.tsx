@@ -66,11 +66,11 @@ export default function MetodoAmazonAutor() {
                 </p>
                 <div
                   className="flex items-start justify-center md:justify-start gap-1 mb-8"
-                  aria-label="€47, pagamento único"
+                  aria-label="€10, pagamento único"
                 >
                   <span className="font-mono text-gold/70 text-sm mt-3" aria-hidden="true">€</span>
                   <span className="font-mono text-gold font-bold text-6xl sm:text-7xl leading-none" aria-hidden="true">
-                    47
+                    10
                   </span>
                 </div>
 
