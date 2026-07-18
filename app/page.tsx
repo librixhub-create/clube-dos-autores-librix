@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Portfolio from '@/components/Portfolio'
+import MetodoAmazonAutor from '@/components/MetodoAmazonAutor'
 import Stats from '@/components/Stats'
 import HowItWorks from '@/components/HowItWorks'
 import Benefits from '@/components/Benefits'
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Portfolio />
+        <MetodoAmazonAutor />
         <Stats />
         <HowItWorks />
         <Benefits />
