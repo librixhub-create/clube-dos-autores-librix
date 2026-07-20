@@ -2,19 +2,36 @@ import SignupForm from './SignupForm'
 
 const WA_BASE = 'https://wa.me/5532998491620'
 
-function waLink(planName: string) {
-  return `${WA_BASE}?text=${encodeURIComponent(`Olá! Quero saber mais sobre o plano ${planName} da LIBRIX ACADEMY.`)}`
+function waLink(planName: string, price?: string) {
+  const msg = price
+    ? `Olá! Quero adquirir o ${planName} por ${price}.`
+    : `Olá! Quero saber mais sobre o plano ${planName} da LIBRIX ACADEMY.`
+  return `${WA_BASE}?text=${encodeURIComponent(msg)}`
 }
 
 type Plan = {
   name: string
   audience: string
+  price?: string
   includes: string[]
   cta: string
   highlight?: boolean
 }
 
 const PUBLICATION_PLANS: Plan[] = [
+  {
+    name: 'Método Amazon Autor',
+    audience: 'Para quem quer começar sozinho, com o passo a passo pronto',
+    price: '€10',
+    includes: [
+      'Checklist Completo de Publicação na Amazon KDP',
+      'Aula Gravada Passo a Passo',
+      'Checklist de Estratégias de Lançamento',
+      'Material de Vendas Automáticas',
+      'Material de Apoio Extra (templates e guias rápidos)',
+    ],
+    cta: 'Quero o Método por €10',
+  },
   {
     name: 'Publicação Start',
     audience: 'Para quem está lançando o primeiro livro',
@@ -110,9 +127,22 @@ function PlanCard({ plan }: { plan: Plan }) {
       <h4 className="font-serif text-xl font-semibold text-paper mb-1.5">
         {plan.name}
       </h4>
-      <p className="font-sans text-paper-muted text-xs leading-relaxed mb-6 pb-6 border-b border-gold/10">
+      <p
+        className={
+          'font-sans text-paper-muted text-xs leading-relaxed mb-6' +
+          (plan.price ? '' : ' pb-6 border-b border-gold/10')
+        }
+      >
         {plan.audience}
       </p>
+
+      {plan.price && (
+        <div className="mb-6 pb-6 border-b border-gold/10">
+          <span className="font-mono text-gold font-bold text-2xl leading-none">
+            {plan.price}
+          </span>
+        </div>
+      )}
 
       <ul className="space-y-3 mb-8 flex-1" role="list">
         {plan.includes.map((item) => (
@@ -128,7 +158,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       </ul>
 
       <a
-        href={waLink(plan.name)}
+        href={waLink(plan.name, plan.price)}
         target="_blank"
         rel="noopener noreferrer"
         className={
@@ -149,11 +179,13 @@ function Track({
   title,
   description,
   plans,
+  columns = 3,
 }: {
   eyebrow: string
   title: string
   description: string
   plans: Plan[]
+  columns?: 3 | 4
 }) {
   return (
     <div className="mb-24 last:mb-0">
@@ -169,7 +201,12 @@ function Track({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
+      <div
+        className={
+          'grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch ' +
+          (columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')
+        }
+      >
         {plans.map((plan) => (
           <PlanCard key={plan.name} plan={plan} />
         ))}
@@ -207,6 +244,7 @@ export default function Pricing() {
           title="Planos de Publicação"
           description="Revisão, diagramação, capa e publicação na Amazon KDP — do arquivo final ao livro no ar."
           plans={PUBLICATION_PLANS}
+          columns={4}
         />
 
         <Track
