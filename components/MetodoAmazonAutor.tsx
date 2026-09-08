@@ -59,20 +59,11 @@ export default function MetodoAmazonAutor() {
                 </ul>
               </div>
 
-              {/* Right — price + form */}
+              {/* Right — form */}
               <div className="px-8 py-10 flex flex-col justify-center">
-                <p className="font-mono text-paper-muted text-xs tracking-wide uppercase mb-2 text-center md:text-left">
-                  Acesso completo por
+                <p className="font-mono text-paper-muted text-xs tracking-wide uppercase mb-6 text-center md:text-left">
+                  Peça acesso e fale com a gente
                 </p>
-                <div
-                  className="flex items-start justify-center md:justify-start gap-1 mb-8"
-                  aria-label="€10, pagamento único"
-                >
-                  <span className="font-mono text-gold/70 text-sm mt-3" aria-hidden="true">€</span>
-                  <span className="font-mono text-gold font-bold text-6xl sm:text-7xl leading-none" aria-hidden="true">
-                    10
-                  </span>
-                </div>
 
                 <MetodoForm />
               </div>

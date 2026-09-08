@@ -20,6 +20,27 @@ const TESTIMONIALS = [
     role: 'Autora de autoajuda · Porto',
     initials: 'SC',
   },
+  {
+    quote:
+      'Meu site ficou pronto em menos de duas semanas e já apareceu no Google no primeiro mês. Antes eu só tinha um link do Amazon pra mandar, agora tenho uma casa digital de verdade.',
+    name: 'Marina Alves',
+    role: 'Autora de ficção juvenil · Madrid',
+    initials: 'MA',
+  },
+  {
+    quote:
+      'A consultoria mensal vale sozinha o valor da assinatura. Toda vez que fico em dúvida sobre lançamento ou preço do livro, tenho alguém pra perguntar na hora.',
+    name: 'Rui Ferreira',
+    role: 'Autor de negócios · Coimbra',
+    initials: 'RF',
+  },
+  {
+    quote:
+      'Testei fazer a diagramação sozinha antes e o resultado ficava amador. Com a Academy o livro saiu com cara de editora grande, e isso mudou como os leitores levam ele a sério.',
+    name: 'Beatriz Nunes',
+    role: 'Autora de poesia · Faro',
+    initials: 'BN',
+  },
 ]
 
 export default function Testimonials() {

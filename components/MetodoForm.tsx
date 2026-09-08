@@ -15,7 +15,7 @@ export default function MetodoForm() {
     if (!canSubmit) return
     const emailPart = email ? ` (${email})` : ''
     const msg =
-      `Olá! Quero adquirir o Método Amazon Autor por €10. Me chamo ${name.trim()}${emailPart}. Como faço o pagamento?`
+      `Olá! Quero saber mais sobre o Método Amazon Autor. Me chamo ${name.trim()}${emailPart}.`
     window.open(`${WA_BASE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
   }
 
@@ -48,11 +48,11 @@ export default function MetodoForm() {
         disabled={!canSubmit}
         className="w-full bg-gold text-ink-deep font-sans font-bold text-base py-3 px-6 rounded text-center hover:bg-gold-light transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed mt-1"
       >
-        Quero o Método Amazon Autor
+        Quero saber mais
       </button>
 
       <p className="font-sans text-paper-muted text-xs text-center leading-relaxed">
-        Você fala com a gente no WhatsApp para confirmar o pagamento · Acesso imediato após a confirmação
+        Você fala com a gente no WhatsApp · Resposta rápida, sem compromisso
       </p>
     </form>
   )

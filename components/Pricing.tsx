@@ -22,7 +22,6 @@ const PUBLICATION_PLANS: Plan[] = [
   {
     name: 'Método Amazon Autor',
     audience: 'Para quem quer começar sozinho, com o passo a passo pronto',
-    price: '€10',
     includes: [
       'Checklist Completo de Publicação na Amazon KDP',
       'Aula Gravada Passo a Passo',
@@ -30,7 +29,7 @@ const PUBLICATION_PLANS: Plan[] = [
       'Material de Vendas Automáticas',
       'Material de Apoio Extra (templates e guias rápidos)',
     ],
-    cta: 'Quero o Método por €10',
+    cta: 'Quero o Método',
   },
   {
     name: 'Publicação Start',
@@ -68,6 +67,23 @@ const PUBLICATION_PLANS: Plan[] = [
       '7 dias grátis · cancelamento livre',
     ],
     cta: 'Assinar a Academy',
+  },
+]
+
+const TRAFFIC_PLANS: Plan[] = [
+  {
+    name: 'Gestão de Tráfego — Meta Ads',
+    audience:
+      'Para autores que querem vender mais todo mês sem aparecer, postar ou aprender a anunciar',
+    includes: [
+      'Criação profissional de campanhas no Instagram e Facebook',
+      'Segmentação voltada para leitores do gênero do seu livro',
+      'Gestão e otimização contínua dos anúncios',
+      'Relatório mensal de resultados e vendas geradas',
+      'Você não precisa divulgar nada — cuidamos de tudo',
+      'Verba de anúncio (investido no Meta) não inclusa na mensalidade',
+    ],
+    cta: 'Quero anunciar meu livro',
   },
 ]
 
@@ -203,8 +219,10 @@ function Track({
 
       <div
         className={
-          'grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch ' +
-          (columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')
+          plans.length === 1
+            ? 'max-w-sm mx-auto'
+            : 'grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch ' +
+              (columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')
         }
       >
         {plans.map((plan) => (
@@ -231,11 +249,12 @@ export default function Pricing() {
             id="pricing-heading"
             className="font-serif text-3xl sm:text-4xl font-bold text-paper"
           >
-            Duas trilhas. Um único parceiro.
+            Três trilhas. Um único parceiro.
           </h2>
           <p className="font-sans text-paper-dim text-sm mt-3 max-w-md mx-auto">
-            Escolha publicar seu livro, construir seu site de autor, ou seguir
-            os dois caminhos. Fale com a gente e receba uma proposta sob medida.
+            Escolha publicar seu livro, ter seus anúncios gerenciados, construir
+            seu site de autor, ou seguir mais de um caminho. Fale com a gente e
+            receba uma proposta sob medida.
           </p>
         </header>
 
@@ -249,6 +268,13 @@ export default function Pricing() {
 
         <Track
           eyebrow="Trilha 2"
+          title="Gestão de Tráfego (Anúncios Meta Ads)"
+          description="Criamos e gerenciamos seus anúncios profissionais no Instagram e Facebook, focados em vender seu livro de forma automática, mês a mês."
+          plans={TRAFFIC_PLANS}
+        />
+
+        <Track
+          eyebrow="Trilha 3"
           title="Planos de Criação de Site para Autores"
           description="Site com blog, domínio, hospedagem, integração com sua loja de livros e SEO básico — sua casa digital como autor."
           plans={SITE_PLANS}
@@ -264,7 +290,7 @@ export default function Pricing() {
               Fale com a gente numa reunião gratuita
             </h3>
             <p className="font-sans text-paper-dim text-sm mb-6 max-w-sm mx-auto">
-              Apresentamos as duas trilhas, tiramos suas dúvidas e ajudamos
+              Apresentamos as três trilhas, tiramos suas dúvidas e ajudamos
               você a escolher o plano certo. Sem compromisso.
             </p>
 
