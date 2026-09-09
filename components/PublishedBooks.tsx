@@ -1,9 +1,10 @@
+import Image from 'next/image'
+
 type PublishedBook = {
   title: string
   genre: string
   url: string
   cover: string
-  coverEdge: string
 }
 
 const PUBLISHED_BOOKS: PublishedBook[] = [
@@ -11,50 +12,43 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     title: 'O Pequeno Charlley',
     genre: 'Infantil',
     url: 'https://www.amazon.com.br/dp/B0H4P4CJ2H',
-    cover: '#2d5a3d',
-    coverEdge: '#1e3d29',
+    cover: '/covers/charlley.jpg',
   },
   {
-    title: 'Governe-se: Metanoia, a Ciência do Inconsciente',
+    title: 'Governe-se: Metanoia, a Ciência do Inconsciente ao Altar',
     genre: 'Desenvolvimento pessoal',
     url: 'https://www.amazon.com.br/dp/B0HFGRBXVK',
-    cover: '#4a5568',
-    coverEdge: '#2d3748',
+    cover: '/covers/governese.jpg',
   },
   {
-    title: 'Diário de uma Diarista',
-    genre: 'Biografia',
+    title: 'O Diário de uma Diarista',
+    genre: 'Romance',
     url: 'https://www.amazon.com.br/dp/B0HBLSBFV8',
-    cover: '#a8552f',
-    coverEdge: '#7d3d22',
+    cover: '/covers/diariodiarista.jpg',
   },
   {
-    title: 'Entre Mundos: Um Chamado Phoenix',
+    title: 'Entre Mundos: O Chamado',
     genre: 'Ficção',
     url: 'https://www.amazon.com.br/dp/B0H7VNSZB6',
-    cover: '#5a3e6b',
-    coverEdge: '#3d2852',
+    cover: '/covers/entremundos.jpg',
   },
   {
     title: 'The Inverted Rose',
     genre: 'Fantasia',
     url: 'https://www.amazon.com.br/dp/B0HH16JX4T',
-    cover: '#8b6914',
-    coverEdge: '#6a5010',
+    cover: '/covers/invertedrose.jpg',
   },
   {
     title: 'Produtos do Setor Segurador para Empreendedores',
     genre: 'Negócios',
     url: 'https://www.amazon.com.br/dp/B0H42R4VKB',
-    cover: '#c9a24b',
-    coverEdge: '#a88538',
+    cover: '/covers/setorsegurador.jpg',
   },
   {
-    title: 'Comfort Is Your Worst Enemy: Insecurity',
+    title: 'Comfort Is Your Worst Enemy',
     genre: 'Autoajuda',
     url: 'https://www.amazon.com.br/dp/B0GVYVNWPF',
-    cover: '#1e3329',
-    coverEdge: '#0d1a13',
+    cover: '/covers/comfort.jpg',
   },
 ]
 
@@ -93,21 +87,19 @@ export default function PublishedBooks() {
                 rel="noopener noreferrer"
                 className="group flex flex-col h-full rounded-sm overflow-hidden border border-gold/15 bg-ink hover:border-gold/40 transition-colors duration-200"
               >
-                <div
-                  className="relative flex items-center justify-center h-28 sm:h-32 px-4"
-                  style={{ backgroundColor: book.cover }}
-                >
-                  <div
-                    className="absolute inset-y-0 left-0 w-1.5"
-                    style={{ backgroundColor: book.coverEdge }}
-                    aria-hidden="true"
+                <div className="relative w-full aspect-[2/3] bg-ink-mid">
+                  <Image
+                    src={book.cover}
+                    alt={`Capa do livro ${book.title}`}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover"
                   />
-                  <div className="absolute top-0 inset-x-0 h-px bg-white/20" aria-hidden="true" />
-                  <span className="font-serif text-white text-sm font-semibold text-center leading-snug line-clamp-3">
-                    {book.title}
-                  </span>
                 </div>
                 <div className="flex flex-col flex-1 px-4 py-3.5">
+                  <span className="font-serif text-paper text-sm font-semibold leading-snug mb-1.5">
+                    {book.title}
+                  </span>
                   <span className="font-mono text-gold/60 text-[10px] tracking-widest uppercase mb-2">
                     {book.genre}
                   </span>
