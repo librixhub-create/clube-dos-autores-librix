@@ -16,6 +16,7 @@ type Plan = {
   includes: string[]
   cta: string
   highlight?: boolean
+  badge?: string
 }
 
 const PUBLICATION_PLANS: Plan[] = [
@@ -122,6 +123,23 @@ const SITE_PLANS: Plan[] = [
     ],
     cta: 'Quero vender pelo meu site',
   },
+  {
+    name: 'Site Profissional + Blog Exclusivo',
+    audience:
+      'Para quem quer o site mais completo: design de alto nível, estrutura sob medida e blog exclusivo pensado só para vender mais',
+    includes: [
+      'Tudo do Site + Loja do Autor',
+      'Design 100% exclusivo e personalizado — sem templates',
+      'Estrutura completa: home, sobre o autor, catálogo, blog e contato',
+      'Blog exclusivo com estratégia de conteúdo para atrair leitores',
+      'Copywriting estratégico focado em conversão e vendas',
+      'SEO avançado + otimização de velocidade',
+      'Suporte prioritário no primeiro mês',
+    ],
+    cta: 'Quero o site mais completo',
+    highlight: true,
+    badge: 'Alto nível',
+  },
 ]
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -136,7 +154,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     >
       {plan.highlight && (
         <span className="absolute top-0 right-6 -translate-y-1/2 font-mono text-ink-deep bg-gold text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-sm">
-          Mais escolhido
+          {plan.badge ?? 'Mais escolhido'}
         </span>
       )}
 
@@ -278,6 +296,7 @@ export default function Pricing() {
           title="Planos de Criação de Site para Autores"
           description="Site com blog, domínio, hospedagem, integração com sua loja de livros e SEO básico — sua casa digital como autor."
           plans={SITE_PLANS}
+          columns={4}
         />
 
         {/* Bottom CTA — schedule call */}

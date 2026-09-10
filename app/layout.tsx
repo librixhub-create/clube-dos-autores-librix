@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Source_Sans_3, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -53,6 +54,8 @@ export default function RootLayout({
     >
       <body className="bg-ink text-paper font-sans antialiased">
         {children}
+
+        <WhatsAppFloat />
 
         {/* Facebook Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">
