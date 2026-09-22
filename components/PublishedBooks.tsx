@@ -87,9 +87,9 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     cover: '/covers/ovelhasqueridas.jpg',
   },
   {
-    title: 'Força na Fraqueza: Vencendo no Poder de Cristo',
+    title: 'A Força na Fraqueza',
     genre: 'Espiritualidade',
-    url: 'https://www.amazon.com/dp/B08DXNKMY2',
+    url: 'https://www.amazon.com/dp/B0GZH8P7Y2',
     cover: '/covers/forcanafraqueza.jpg',
   },
 ]
