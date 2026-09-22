@@ -86,6 +86,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com.br/dp/B0HKD5ZZ7G',
     cover: '/covers/ovelhasqueridas.jpg',
   },
+  {
+    title: 'Força na Fraqueza: Vencendo no Poder de Cristo',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com/dp/B08DXNKMY2',
+    cover: '/covers/forcanafraqueza.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
@@ -103,11 +109,12 @@ export default function PublishedBooks() {
             id="published-books-heading"
             className="font-serif text-3xl sm:text-4xl font-bold text-paper"
           >
-            Livros que já publicamos na Amazon
+            Livros que já publicamos na Amazon — Em destaque
           </h2>
           <p className="font-sans text-paper-dim text-sm mt-3 max-w-lg mx-auto">
-            Alguns dos livros de autores que passaram pela LIBRIX ACADEMY e
-            estão à venda hoje, de verdade, na Amazon.
+            Já publicamos dezenas de livros de autores que passaram pela
+            LIBRIX ACADEMY — estes são apenas o destaque da semana, à venda
+            hoje, de verdade, na Amazon.
           </p>
         </header>
 
