@@ -50,6 +50,42 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com.br/dp/B0GVYVNWPF',
     cover: '/covers/comfort.jpg',
   },
+  {
+    title: '365 Questions About Life',
+    genre: 'Desenvolvimento pessoal',
+    url: 'https://www.amazon.com/dp/B0GYL2N8L1',
+    cover: '/covers/365questions.jpg',
+  },
+  {
+    title: 'Comunicación Poderosa',
+    genre: 'Comunicação',
+    url: 'https://www.amazon.com/dp/B0FY7Z3TB3',
+    cover: '/covers/comunicacaopoderosa.jpg',
+  },
+  {
+    title: 'Fé e Propósito: Agenda Devocional',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com/dp/B0GGZ9WS1W',
+    cover: '/covers/feproposito.jpg',
+  },
+  {
+    title: 'O Rosário Meditado',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com/dp/6502110142',
+    cover: '/covers/rosariomeditado.jpg',
+  },
+  {
+    title: 'Little Charlley: A little dog can change your life',
+    genre: 'Infantil',
+    url: 'https://www.amazon.com.br/dp/B0H4HWC16J',
+    cover: '/covers/littlecharlley-en.jpg',
+  },
+  {
+    title: 'Minhas Ovelhas Queridas: Uma História de Amor, Fé e Propósito',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com.br/dp/B0HKD5ZZ7G',
+    cover: '/covers/ovelhasqueridas.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
