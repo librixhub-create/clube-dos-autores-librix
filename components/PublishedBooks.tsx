@@ -92,6 +92,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com/dp/B0GZH8P7Y2',
     cover: '/covers/forcanafraqueza.jpg',
   },
+  {
+    title: 'Recalculando a Rota: O que a Tempestade Revela, Deus Já Havia Prometido',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com/dp/B0HK4Z51FZ',
+    cover: '/covers/recalculandoarota.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
