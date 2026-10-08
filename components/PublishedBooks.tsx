@@ -27,18 +27,6 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     cover: '/covers/diariodiarista.jpg',
   },
   {
-    title: 'Entre Mundos: O Chamado',
-    genre: 'Ficção',
-    url: 'https://www.amazon.com.br/dp/B0H7VNSZB6',
-    cover: '/covers/entremundos.jpg',
-  },
-  {
-    title: 'The Inverted Rose',
-    genre: 'Fantasia',
-    url: 'https://www.amazon.com.br/dp/B0HH16JX4T',
-    cover: '/covers/invertedrose.jpg',
-  },
-  {
     title: 'Produtos do Setor Segurador para Empreendedores',
     genre: 'Negócios',
     url: 'https://www.amazon.com.br/dp/B0H42R4VKB',
@@ -97,6 +85,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     genre: 'Espiritualidade',
     url: 'https://www.amazon.com/dp/B0HK4Z51FZ',
     cover: '/covers/recalculandoarota.jpg',
+  },
+  {
+    title: 'Perdão que Restaura Casamento',
+    genre: 'Espiritualidade',
+    url: 'https://www.amazon.com.br/dp/B0HM87J8XR',
+    cover: '/covers/perdaorestaura.jpg',
   },
 ]
 
