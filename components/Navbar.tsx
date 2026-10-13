@@ -27,6 +27,11 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ink/90 backdrop-blur-sm border-b border-gold/20">
+      <div className="h-8 flex items-center justify-center bg-gold px-4">
+        <p className="font-sans text-[11px] sm:text-xs text-ink-deep whitespace-nowrap">
+          Pague só <strong>50% para começar</strong> — o restante na entrega
+        </p>
+      </div>
       <nav
         className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
         aria-label="Navegação principal"

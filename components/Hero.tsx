@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex flex-col justify-center pt-16 px-4 sm:px-6"
+      className="min-h-screen flex flex-col justify-center pt-24 px-4 sm:px-6"
       aria-labelledby="hero-heading"
     >
       <div className="max-w-6xl mx-auto w-full py-20 sm:py-28">

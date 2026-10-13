@@ -56,7 +56,7 @@ export default function CalculadorasPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-16 pb-24 px-4 sm:px-6">
+      <main className="min-h-screen pt-24 pb-24 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto py-12 sm:py-16">
           {/* Header */}
           <header className="mb-10">
