@@ -98,6 +98,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com/dp/B0HP8YR4JR',
     cover: '/covers/lifejourney.jpg',
   },
+  {
+    title: 'Ninguém Deve + Que Eu',
+    genre: 'Desenvolvimento pessoal',
+    url: 'https://www.amazon.com/dp/B0HNGZBPBK',
+    cover: '/covers/ninguemdeve.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
