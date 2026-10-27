@@ -92,6 +92,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com.br/dp/B0HM87J8XR',
     cover: '/covers/perdaorestaura.jpg',
   },
+  {
+    title: 'Life and Journey of an Entrepreneur',
+    genre: 'Negócios',
+    url: 'https://www.amazon.com/dp/B0HP8YR4JR',
+    cover: '/covers/lifejourney.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
