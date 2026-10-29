@@ -104,6 +104,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com/dp/B0HNGZBPBK',
     cover: '/covers/ninguemdeve.jpg',
   },
+  {
+    title: 'Recomeçar: A Coragem de uma Mãe Imigrante',
+    genre: 'Memórias',
+    url: 'https://www.amazon.com/dp/B0HLW7NJXF',
+    cover: '/covers/recomecar.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
