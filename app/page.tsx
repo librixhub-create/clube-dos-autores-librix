@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+import PlanoCompleto from '@/components/PlanoCompleto'
 import Hero from '@/components/Hero'
 import Portfolio from '@/components/Portfolio'
 import MetodoAmazonAutor from '@/components/MetodoAmazonAutor'
@@ -16,6 +17,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <PlanoCompleto />
         <Hero />
         <Portfolio />
         <MetodoAmazonAutor />
