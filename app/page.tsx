@@ -17,8 +17,8 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <PlanoCompleto />
         <Hero />
+        <PlanoCompleto />
         <Portfolio />
         <MetodoAmazonAutor />
         <Stats />

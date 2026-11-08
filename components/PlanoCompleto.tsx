@@ -16,14 +16,14 @@ const ITEMS = [
 ]
 
 /**
- * Oferta principal do site: logo no início da página, antes do Hero.
+ * Oferta principal do site: logo abaixo do Hero ("Publique. Apareça. Venda.").
  * Mesmo plano (e preço) da loja www.librixapp.com.
  */
 export default function PlanoCompleto() {
   return (
     <section
       id="plano-completo"
-      className="pt-32 sm:pt-36 pb-6 px-4 sm:px-6"
+      className="pt-10 sm:pt-6 pb-12 px-4 sm:px-6"
       aria-labelledby="plano-completo-heading"
     >
       <div className="max-w-6xl mx-auto">
