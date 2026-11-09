@@ -276,6 +276,20 @@ export default function Pricing() {
           </p>
         </header>
 
+        <a
+          href="#plano-completo"
+          className="block mb-16 border border-gold/40 bg-gold/5 hover:bg-gold/10 rounded-sm px-5 py-4 text-center transition-colors duration-200"
+        >
+          <span className="font-sans text-paper text-sm sm:text-base">
+            Quer resolver tudo de uma vez? O{' '}
+            <strong className="text-gold">Plano Completo (749 €)</strong>{' '}
+            engloba publicação, tradução, audiobook, site e marketing num só plano.
+          </span>
+          <span className="font-mono text-gold text-xs ml-2" aria-hidden="true">
+            Ver →
+          </span>
+        </a>
+
         <Track
           eyebrow="Trilha 1"
           title="Planos de Publicação"

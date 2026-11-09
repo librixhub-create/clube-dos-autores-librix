@@ -29,7 +29,7 @@ export default function PlanoCompleto() {
       <div className="max-w-6xl mx-auto">
         <div className="relative rounded-sm border-2 border-gold bg-ink-deep shadow-glow-purple overflow-hidden">
           <span className="absolute top-0 left-6 sm:left-10 -translate-y-px bg-gold text-ink-deep font-mono text-[10px] sm:text-xs tracking-widest uppercase px-3 py-1.5 rounded-b-sm font-bold">
-            Oferta especial · Plano mais completo
+            Oferta especial · O plano que engloba tudo
           </span>
 
           <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 px-6 sm:px-10 pt-14 pb-10 sm:pb-12">
@@ -41,8 +41,9 @@ export default function PlanoCompleto() {
                 Plano <em className="not-italic text-gold">Completo</em>
               </h2>
               <p className="font-sans text-paper-dim text-base sm:text-lg leading-relaxed max-w-xl mb-8">
-                Edite, traduza, publique e divulgue o seu livro com um plano
-                completo e profissional — tudo num só serviço.
+                O plano que engloba tudo: edite, traduza, publique e divulgue o
+                seu livro e tenha o seu site de autor — sem contratar cada
+                serviço separadamente.
               </p>
 
               <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-4" role="list">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Fraunces, Source_Sans_3, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import PixelEvents from '@/components/PixelEvents'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -22,24 +23,75 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const SITE_URL = 'https://www.librixacademy.com'
+
 export const metadata: Metadata = {
-  title: 'LIBRIX ACADEMY | Publicação e Sites para Autores',
+  metadataBase: new URL(SITE_URL),
+  title: 'LIBRIX ACADEMY | Plano Completo para Autores: Publicação, Tradução e Site',
   description:
-    'Publique. Apareça. Venda. A academia que publica seu livro na Amazon KDP e constrói seu site com blog, para autores independentes que querem presença digital própria.',
+    'Plano Completo por 749 €: edição, tradução para inglês, publicação global (Kindle, paperback e capa dura), audiobook, site do autor e consultoria de marketing. Publique. Apareça. Venda.',
+  keywords: [
+    'publicar livro Amazon KDP',
+    'plano completo para autores',
+    'tradução de livro para inglês',
+    'audiobook',
+    'site para autores',
+    'diagramação e capa',
+    'autores independentes',
+    'publicação de livros Portugal',
+  ],
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'LIBRIX ACADEMY | Publicação e Sites para Autores',
+    title: 'LIBRIX ACADEMY | Plano Completo para Autores por 749 €',
     description:
-      'Publicamos seu livro com qualidade profissional e construímos sua casa digital — site com blog, loja integrada e SEO.',
+      'Edição, tradução, publicação global, audiobook, site do autor e consultoria de marketing num só plano.',
     type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'LIBRIX ACADEMY — Publicação e Sites para Autores',
-      },
-    ],
+    url: SITE_URL,
+    siteName: 'LIBRIX ACADEMY',
+    locale: 'pt_PT',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LIBRIX ACADEMY | Plano Completo para Autores por 749 €',
+    description:
+      'Do manuscrito ao livro à venda no mundo inteiro, num só plano.',
+  },
+}
+
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org`,
+      name: 'LIBRIX ACADEMY',
+      url: SITE_URL,
+      email: 'librixhub@gmail.com',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        telephone: '+55-32-99849-1620',
+        availableLanguage: ['Portuguese', 'English', 'Spanish'],
+      },
+    },
+    {
+      '@type': 'Service',
+      name: 'Plano Completo Librix',
+      serviceType: 'Publicação de livros',
+      description:
+        'Edição profissional, tradução para o inglês, publicação global (Kindle, paperback e capa dura), audiobook, site do autor e consultoria de marketing.',
+      provider: { '@id': `${SITE_URL}/#org` },
+      areaServed: 'Europe',
+      offers: {
+        '@type': 'Offer',
+        price: '749',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/#plano-completo`,
+      },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -56,9 +108,15 @@ export default function RootLayout({
         {children}
 
         <WhatsAppFloat />
+        <PixelEvents />
 
-        {/* Facebook Pixel */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
+
+        {/* Facebook Pixel (carrega depois de a página ficar interativa, sem atrasar o LCP) */}
+        <Script id="facebook-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

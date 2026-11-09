@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const TESTIMONIALS = [
   {
     quote:
@@ -115,11 +117,12 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="block border border-gold/15 rounded-sm overflow-hidden bg-white"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/depoimento-gloria-silvia-jornal-de-angola.png"
               alt="Jornal de Angola: Estilista angolana lança em Portugal livro sobre imigração e maternidade — Glória Sílvia, autora de Recomeçar"
-              loading="lazy"
+              width={580}
+              height={2075}
+              sizes="(min-width: 640px) 512px, 100vw"
               className="w-full h-auto block"
             />
           </a>
