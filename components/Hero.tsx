@@ -1,4 +1,5 @@
 import Bookshelf from './Bookshelf'
+import LeadForm from './LeadForm'
 
 export default function Hero() {
   return (
@@ -8,6 +9,7 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="max-w-6xl mx-auto w-full py-20 sm:py-28">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-14 items-start">
         <div className="max-w-3xl">
           <p className="font-mono text-gold/70 text-xs sm:text-sm tracking-widest uppercase mb-5">
             LIBRIX ACADEMY · Publicação &amp; Presença Digital para Autores
@@ -68,6 +70,14 @@ export default function Hero() {
             >
               Ver benefícios
             </a>
+            <a
+              href="https://wa.me/5532998491620?text=Ol%C3%A1!+Quero+saber+mais+sobre+a+LIBRIX+ACADEMY"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] text-ink-deep font-sans font-bold text-base px-8 py-3 rounded text-center hover:opacity-90 transition-opacity duration-200"
+            >
+              Chamar no WhatsApp
+            </a>
           </div>
           <a
             href="/calculadoras"
@@ -80,6 +90,11 @@ export default function Hero() {
           <p className="font-sans text-paper-muted text-xs mt-3">
             Reunião gratuita · 7 dias grátis após assinar · Cancele quando quiser
           </p>
+        </div>
+
+        <div className="lg:sticky lg:top-28">
+          <LeadForm />
+        </div>
         </div>
 
         <div className="mt-20 sm:mt-24">
