@@ -115,7 +115,8 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
 export default function PublishedBooks() {
   return (
     <section
-      className="py-24 px-4 sm:px-6 bg-ink-light border-y border-gold/10"
+      id="livros"
+      className="py-24 px-4 sm:px-6 bg-ink-light border-y border-gold/10 scroll-mt-24"
       aria-labelledby="published-books-heading"
     >
       <div className="max-w-6xl mx-auto">
