@@ -110,6 +110,12 @@ const PUBLISHED_BOOKS: PublishedBook[] = [
     url: 'https://www.amazon.com/dp/B0HLW7NJXF',
     cover: '/covers/recomecar.jpg',
   },
+  {
+    title: 'Angola Dança! História, Música, Ritmos e Danças de um Povo que Fez o Mundo Dançar',
+    genre: 'Cultura e História',
+    url: 'https://www.amazon.com/dp/B0HS6BM2YB',
+    cover: '/covers/angoladanca.jpg',
+  },
 ]
 
 export default function PublishedBooks() {
