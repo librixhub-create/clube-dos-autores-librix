@@ -106,6 +106,7 @@ export default function RootLayout({
     >
       <body className="bg-ink text-paper font-sans antialiased">
         {children}
+        <script async src="https://librix-tracker.vercel.app/t.js" data-site="librixacademy"></script>
 
         <WhatsAppFloat />
         <PixelEvents />
