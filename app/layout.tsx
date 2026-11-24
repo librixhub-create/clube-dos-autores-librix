@@ -104,7 +104,14 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${fraunces.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-ink text-paper font-sans antialiased">
+      <body className="bg-ink text-paper font-sans antialiased pt-9">
+        <div className="bf-bar" role="region" aria-label="Promoção de Black Friday">
+          <div className="bf-track" aria-hidden="true">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span key={i} className="bf-item"><i>✦</i>PROMOÇÃO DE BLACK FRIDAY</span>
+            ))}
+          </div>
+        </div>
         {children}
         <script async src="https://librix-tracker.vercel.app/t.js" data-site="librixacademy"></script>
 
