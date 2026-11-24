@@ -1,9 +1,8 @@
-const PRICE = '749 €'
 const WA_URL = `https://wa.me/5532998491620?text=${encodeURIComponent(
-  `Olá! Quero adquirir o Plano Completo por ${PRICE}.`
+  `Olá! Quero adquirir o Plano Completo. Pode me passar os valores?`
 )}`
 const WA_DOUBTS = `https://wa.me/5532998491620?text=${encodeURIComponent(
-  'Olá! Vi o Plano Completo na LIBRIX ACADEMY e quero saber mais.'
+  'Olá! Vi o Plano Completo na LIBRIX ACADEMY e quero saber mais sobre os valores.'
 )}`
 
 const ITEMS = [
@@ -63,16 +62,16 @@ export default function PlanoCompleto() {
 
             <div className="flex flex-col justify-center rounded-sm border border-gold/40 bg-gold/5 px-6 py-8 text-center">
               <p className="font-mono text-gold/70 text-xs tracking-widest uppercase mb-3">
-                Tudo isso por apenas
+                Investimento
               </p>
-              <p className="font-serif text-6xl sm:text-7xl font-bold text-gold leading-none mb-3">
-                {PRICE}
+              <p className="font-serif text-3xl sm:text-4xl font-bold text-gold leading-tight mb-3">
+                Saiba mais sobre os valores
               </p>
               <p className="font-sans text-paper-dim text-sm mb-1">
-                ou parcele em até <span className="text-paper font-semibold">3x sem juros</span>
+                Condições facilitadas, com <span className="text-paper font-semibold">pagamento parcelado</span>
               </p>
               <p className="font-sans text-paper-muted text-xs mb-7">
-                Prazo de 60 a 90 dias · também em até 5x com juros
+                Prazo de 60 a 90 dias · pagamento em dólar, euro ou outras moedas
               </p>
 
               <a
@@ -81,7 +80,7 @@ export default function PlanoCompleto() {
                 rel="noopener noreferrer"
                 className="bg-gold text-ink-deep font-sans font-bold text-base px-8 py-3.5 rounded text-center hover:bg-gold-light transition-colors duration-200"
               >
-                Quero o Plano Completo
+                Saber os valores no WhatsApp
               </a>
               <a
                 href={WA_DOUBTS}

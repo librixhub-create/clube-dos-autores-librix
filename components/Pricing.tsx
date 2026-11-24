@@ -282,7 +282,7 @@ export default function Pricing() {
         >
           <span className="font-sans text-paper text-sm sm:text-base">
             Quer resolver tudo de uma vez? O{' '}
-            <strong className="text-gold">Plano Completo (749 €)</strong>{' '}
+            <strong className="text-gold">Plano Completo</strong>{' '}
             engloba publicação, tradução, audiobook, site e marketing num só plano.
           </span>
           <span className="font-mono text-gold text-xs ml-2" aria-hidden="true">

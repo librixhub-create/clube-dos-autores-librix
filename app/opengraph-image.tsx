@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'LIBRIX ACADEMY — Plano Completo para autores por 749 €'
+export const alt = 'LIBRIX ACADEMY — Plano Completo para autores'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 export const runtime = 'edge'
@@ -31,8 +31,8 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 36, marginTop: 20, color: '#c8bfa8' }}>
           Edição, tradução, publicação global, audiobook, site e marketing.
         </div>
-        <div style={{ fontSize: 96, fontWeight: 700, marginTop: 36, color: '#c9a24b' }}>
-          749 €
+        <div style={{ fontSize: 56, fontWeight: 700, marginTop: 40, color: '#c9a24b' }}>
+          Saiba mais sobre os valores
         </div>
       </div>
     ),

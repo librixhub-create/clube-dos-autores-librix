@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'LIBRIX ACADEMY | Plano Completo para Autores: Publicação, Tradução e Site',
   description:
-    'Plano Completo por 749 €: edição, tradução para inglês, publicação global (Kindle, paperback e capa dura), audiobook, site do autor e consultoria de marketing. Publique. Apareça. Venda.',
+    'Plano Completo: edição, tradução para inglês, publicação global (Kindle, paperback e capa dura), audiobook, site do autor e consultoria de marketing. Publique. Apareça. Venda.',
   keywords: [
     'publicar livro Amazon KDP',
     'plano completo para autores',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'LIBRIX ACADEMY | Plano Completo para Autores por 749 €',
+    title: 'LIBRIX ACADEMY | Plano Completo para Autores',
     description:
       'Edição, tradução, publicação global, audiobook, site do autor e consultoria de marketing num só plano.',
     type: 'website',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LIBRIX ACADEMY | Plano Completo para Autores por 749 €',
+    title: 'LIBRIX ACADEMY | Plano Completo para Autores',
     description:
       'Do manuscrito ao livro à venda no mundo inteiro, num só plano.',
   },
@@ -85,8 +85,6 @@ const JSON_LD = {
       areaServed: 'Europe',
       offers: {
         '@type': 'Offer',
-        price: '749',
-        priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/#plano-completo`,
       },
